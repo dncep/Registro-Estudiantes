@@ -21,4 +21,8 @@ public enum AreaAcademica {
     public String getNombre() {
         return nombre;
     }
+
+    public String getCodigo() {
+        return name();
+    }
 }

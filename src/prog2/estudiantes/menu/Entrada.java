@@ -1,9 +1,6 @@
 package prog2.estudiantes.menu;
 
-import prog2.estudiantes.data.Carrera;
-import prog2.estudiantes.data.Cedula;
-import prog2.estudiantes.data.Estado;
-import prog2.estudiantes.data.Util;
+import prog2.estudiantes.data.*;
 
 import java.util.Arrays;
 import java.util.Calendar;
@@ -170,6 +167,27 @@ public class Entrada {
 
             for(Carrera carrera : Carrera.values()) {
                 if(carrera.getCodigo().equals(input) || Util.normalizar(carrera.getNombre().toUpperCase()).equals(Util.normalizar(input))) return carrera;
+            }
+
+            System.out.println("Entrada '" + input + "' inválida");;
+        }
+    }
+
+    /**
+     * Solicita un area académica al usuario por nombre o código. Si comete un error, lo solicitará de nuevo hasta
+     * conseguir un valor válido.
+     * @param instruccion El mensaje que muestra al solicitar el area
+     * @param scanner El Scanner que utilizará para la entrada de información
+     *
+     * @return El area insertada por el usuario
+     * */
+    public static AreaAcademica getArea(String instruccion, Scanner scanner) {
+        while(true) {
+            System.out.print(instruccion + ": ");
+            String input = scanner.nextLine().trim().toUpperCase();
+
+            for(AreaAcademica area : AreaAcademica.values()) {
+                if(area.getCodigo().equals(input) || Util.normalizar(area.getNombre().toUpperCase()).equals(Util.normalizar(input))) return area;
             }
 
             System.out.println("Entrada '" + input + "' inválida");;

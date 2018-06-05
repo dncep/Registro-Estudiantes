@@ -14,6 +14,8 @@ public class Registro {
     public final ArrayList<Materia> materias = new ArrayList<>();
     private final File file;
 
+    public int ID_MATERIAS = 0;
+
     public Registro(File file) {
         this.file = file;
 
@@ -45,6 +47,9 @@ public class Registro {
                 est.esExtranjero = sr.readBoolean();
                 estudiantes.add(est);
             }
+
+            ID_MATERIAS = sr.readByte();
+            int cantMaterias = sr.readByte();
         } catch(IOException x) {
             x.printStackTrace();
         }
@@ -67,6 +72,9 @@ public class Registro {
                 sw.writeString(est.cedula.toString());
                 sw.writeBoolean(est.esExtranjero);
             }
+
+            sw.writeByte(ID_MATERIAS);
+            sw.writeByte(materias.size());
         } catch(IOException x) {
             x.printStackTrace();
         }

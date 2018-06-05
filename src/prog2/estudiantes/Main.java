@@ -23,7 +23,7 @@ public class Main {
 
     public static void main(String[] args) {
         MenuBucle bucle = new MenuBucle(new MenuInicio());
-        Registro registro = new Registro(new File(System.getProperty("user.home") + File.separator + "registro_estudiantes.txt"));
+        Registro registro = new Registro(new File(System.getProperty("user.home") + File.separator + "registro_estudiantes"));
         registro.cargar();
         bucle.seleccionar(registro, new Scanner(System.in));
         registro.guardar();
