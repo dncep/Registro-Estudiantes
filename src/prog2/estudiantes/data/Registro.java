@@ -50,6 +50,14 @@ public class Registro {
 
             ID_MATERIAS = sr.readByte();
             int cantMaterias = sr.readByte();
+            for(int i = 0; i < cantMaterias; i++) {
+                Materia mat = new Materia();
+                mat.codigo = sr.readString();
+                mat.nombre = sr.readString();
+                mat.area = AreaAcademica.values()[sr.readByte()];
+                mat.id = sr.readByte();
+                materias.add(mat);
+            }
         } catch(IOException x) {
             x.printStackTrace();
         }
@@ -75,6 +83,13 @@ public class Registro {
 
             sw.writeByte(ID_MATERIAS);
             sw.writeByte(materias.size());
+
+            for(Materia mat : materias) {
+                sw.writeString(mat.codigo);
+                sw.writeString(mat.nombre);
+                sw.writeByte(mat.area.ordinal());
+                sw.writeByte(mat.id);
+            }
         } catch(IOException x) {
             x.printStackTrace();
         }
