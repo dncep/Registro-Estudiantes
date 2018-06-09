@@ -24,8 +24,8 @@ public class MenuEditarMateria implements Menu {
                 System.out.println("\tID: " + materia.id + " | Área: " + materia.area.getNombre());
 
                 while(true) {
-                    System.out.println("\nElige el numero del campo que quieres editar");
-                    System.out.println("\n1. Código");
+                    System.out.println("\nElige el numero del campo que quieres editar\n");
+                    System.out.println("1. Código");
                     System.out.println("2. Nombre");
                     System.out.println("3. Área académica");
                     System.out.println("4. Salir");
@@ -33,15 +33,15 @@ public class MenuEditarMateria implements Menu {
 
                     switch(opcion) {
                         case 1:
-                            materia.codigo = Entrada.getString("\nModificar el código: ", scanner);
+                            materia.codigo = Entrada.getString("\nModificar el código", scanner);
                             System.out.println("\nModificado correctamente!");
                             break;
                         case 2:
-                            materia.nombre = Entrada.getString("\nModificar el nombre: ", scanner);
+                            materia.nombre = Entrada.getString("\nModificar el nombre", scanner);
                             System.out.println("\nModificado correctamente!");
                             break;
                         case 3:
-                            materia.area = Entrada.getArea ("\nModificar el área académica: ", scanner);
+                            materia.area = Entrada.getArea ("\nModificar el área académica", scanner);
                             System.out.println("\nModificado correctamente!");
                             break;
                         default:

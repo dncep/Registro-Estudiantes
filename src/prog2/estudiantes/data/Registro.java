@@ -9,13 +9,33 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Objeto destinado a almacenar los datos del sistema, incluyendo los estudiantes y las materias.
+ * */
 public class Registro {
+    /**
+     * Lista para los estudiantes.
+     * */
     public final ArrayList<Estudiante> estudiantes = new ArrayList<>();
+    /**
+     * Lista para las materias.
+     * */
     public final ArrayList<Materia> materias = new ArrayList<>();
+    /**
+     * El fichero en el cual almacenar los datos persistentes.
+     * */
     private final File file;
 
+    /**
+     * El ID de la siguiente materia a crear.
+     * */
     public int ID_MATERIAS = 0;
 
+    /**
+     * Construye un registro que se guarda en el fichero dado.
+     *
+     * @param file El fichero en el cual almacenar los datos persistentes.
+     * */
     public Registro(File file) {
         this.file = file;
 
@@ -28,6 +48,9 @@ public class Registro {
         }
     }
 
+    /**
+     * Borra los datos en este objeto y los llena con los datos presentes en el fichero correspondiente a este registro.
+     * */
     public void cargar() {
         estudiantes.clear();
         materias.clear();
@@ -63,6 +86,9 @@ public class Registro {
         }
     }
 
+    /**
+     * Escribe los datos de este registro en el fichero correspondiente.
+     * */
     public void guardar() {
 
         try(FileOutputStream fos = new FileOutputStream(file)) {

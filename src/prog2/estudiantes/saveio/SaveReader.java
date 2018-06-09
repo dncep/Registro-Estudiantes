@@ -4,6 +4,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Calendar;
 
+/**
+ * Objeto que sirve para leer información compleja de un fichero.
+ * */
 public class SaveReader {
 
     private final FileInputStream fis;
@@ -12,6 +15,10 @@ public class SaveReader {
         this.fis = fis;
     }
 
+    /**
+     * Lee 4 bytes representando un entero.
+     * @return El entero leído.
+     * */
     public int readInt() throws IOException {
         int n = 0;
         for(int i = 0; i < 4; i++) {
@@ -21,11 +28,22 @@ public class SaveReader {
         return n;
     }
 
+    /**
+     * Lee 1 byte del fichero.
+     * @return El byte leído.
+     * */
     public int readByte() throws IOException {
-        int n = fis.read();
-        return n;
+        return fis.read();
     }
 
+    /**
+     * Lee una cadena del archivo con la siguiente estructura:
+     *
+     * * Lee los siguientes 4 bytes (1 int) representando la longitud de la cadena 'n'.
+     * * Lee los siguientes 4*n bytes (n ints) representando cada caracter.
+     *
+     * @return La cadena leída.
+     * */
     public String readString() throws IOException {
         int len = readInt();
         StringBuilder sb = new StringBuilder();
@@ -35,6 +53,15 @@ public class SaveReader {
         return sb.toString();
     }
 
+    /**
+     * Lee una fecha del archivo con la siguiente estructura:
+     *
+     * * Lee 4 bytes (1 int) representando el año.
+     * * Lee 1 byte representando el mes.
+     * * Lee 1 byte representando el día.
+     *
+     * @return La fecha de calendario leída.
+     * */
     public Calendar readDate() throws IOException {
         int year = readInt();
         int month = readByte();
@@ -43,6 +70,7 @@ public class SaveReader {
         date.set(year, month, day);
         return date;
     }
+
 
     public boolean readBoolean() throws IOException {
         return readByte() == 1;
