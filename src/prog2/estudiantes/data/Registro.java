@@ -25,6 +25,10 @@ public class Registro {
      * */
     public final ArrayList<Materia> materias = new ArrayList<>();
     /**
+     * Lista para las secciones.
+     * */
+    public final ArrayList<Seccion> secciones = new ArrayList<>();
+    /**
      * El fichero en el cual almacenar los datos persistentes.
      * */
     private final File file;

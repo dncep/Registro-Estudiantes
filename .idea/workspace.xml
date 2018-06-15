@@ -2,14 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8f1fbcc-090f-4984-b7e9-0c7b43000c0a" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuAgregarEstudianteSeccion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuBorrarSeccion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuBuscarSeccion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuBuscarSeccionEstudiante.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuBuscarSeccionMateria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuCrearSeccion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuEditarSeccion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuListarSecciones.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuSecciones.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuVerEstudiantesSeccion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/prog2/estudiantes/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/prog2/estudiantes/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/prog2/estudiantes/data/Estudiante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/prog2/estudiantes/data/Estudiante.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/prog2/estudiantes/data/Registro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/prog2/estudiantes/data/Registro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/prog2/estudiantes/menu/Entrada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/prog2/estudiantes/menu/Entrada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuEstandar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuEstandar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuInicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuInicio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuSalir.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuSalir.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/prog2/estudiantes/menu/estudiantes/MenuCrearEstudiante.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/prog2/estudiantes/menu/estudiantes/MenuCrearEstudiante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/prog2/estudiantes/menu/materias/MenuBuscarMateria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/prog2/estudiantes/menu/materias/MenuBuscarMateria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/prog2/estudiantes/saveio/SaveReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/prog2/estudiantes/saveio/SaveReader.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,11 +32,75 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Estudiante.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/data/Estudiante.java">
+      <file leaf-file-name="Registro.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/data/Registro.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+            <state relative-caret-position="204">
+              <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenuSecciones.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuSecciones.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#249#250#0" expanded="true" />
+                <element signature="e#276#277#0" expanded="true" />
+                <element signature="e#323#324#0" expanded="true" />
+                <element signature="e#350#351#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenuInicio.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuInicio.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenuEditarSeccion.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuEditarSeccion.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenuBuscarSeccion.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuBuscarSeccion.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="46" lean-forward="true" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenuEstandar.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuEstandar.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -36,94 +108,48 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+            <state relative-caret-position="204">
+              <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Registro.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/data/Registro.java">
+      <file leaf-file-name="MenuBucle.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuBucle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="78" column="39" lean-forward="true" selection-start-line="78" selection-start-column="39" selection-end-line="78" selection-end-column="39" />
+            <state relative-caret-position="23">
+              <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#198#199#0" expanded="true" />
+                <element signature="e#230#231#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuCrearEstudiante.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/estudiantes/MenuCrearEstudiante.java">
+      <file leaf-file-name="MenuCrearSeccion.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuCrearSeccion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SaveReader.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/saveio/SaveReader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="48" column="43" selection-start-line="48" selection-start-column="43" selection-end-line="48" selection-end-column="43" />
+            <state relative-caret-position="244">
+              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#237#238#0" expanded="true" />
+                <element signature="e#264#265#0" expanded="true" />
+                <element signature="e#348#349#0" expanded="true" />
+                <element signature="e#376#377#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Entrada.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/Entrada.java">
+      <file leaf-file-name="MenuMaterias.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/materias/MenuMaterias.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Materia.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/data/Materia.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="45" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MenuBuscarMateria.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/materias/MenuBuscarMateria.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="38" column="68" selection-start-line="38" selection-start-column="68" selection-end-line="38" selection-end-column="68" />
+            <state relative-caret-position="187">
+              <caret line="11" column="197" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="197" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#381#382#0" expanded="true" />
-                <element signature="e#420#421#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Seccion.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/data/Seccion.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HoraDia.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/data/HoraDia.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="24" column="49" lean-forward="true" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
-              <folding>
-                <element signature="e#572#573#0" expanded="true" />
-                <element signature="e#660#661#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -154,11 +180,8 @@
         <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuMaterias.java" />
         <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/materias/MenuListarMateria.java" />
         <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuOpciones.java" />
-        <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuEstandar.java" />
         <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuBucle.java" />
         <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuAtras.java" />
-        <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuSalir.java" />
-        <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuInicio.java" />
         <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/materias/MenuMaterias.java" />
         <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/estudiantes/MenuEstudiantes.java" />
         <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/Menu.java" />
@@ -184,9 +207,22 @@
         <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/materias/MenuBuscarMateria.java" />
         <option value="$PROJECT_DIR$/src/prog2/estudiantes/data/Estudiante.java" />
         <option value="$PROJECT_DIR$/src/prog2/estudiantes/Main.java" />
+        <option value="$PROJECT_DIR$/src/prog2/estudiantes/saveio/SaveReader.java" />
         <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/estudiantes/MenuCrearEstudiante.java" />
         <option value="$PROJECT_DIR$/src/prog2/estudiantes/data/Registro.java" />
-        <option value="$PROJECT_DIR$/src/prog2/estudiantes/saveio/SaveReader.java" />
+        <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuCrearSeccion.java" />
+        <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuAgregarEstudianteSeccion.java" />
+        <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuVerEstudiantesSeccion.java" />
+        <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuBorrarSeccion.java" />
+        <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuListarSecciones.java" />
+        <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuBuscarSeccionMateria.java" />
+        <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuBuscarSeccionEstudiante.java" />
+        <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuSecciones.java" />
+        <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuInicio.java" />
+        <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuSalir.java" />
+        <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuEditarSeccion.java" />
+        <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuBuscarSeccion.java" />
+        <option value="$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuEstandar.java" />
       </list>
     </option>
   </component>
@@ -264,6 +300,15 @@
               <item name="estudiantes" type="462c0819:PsiDirectoryNode" />
               <item name="menu" type="462c0819:PsiDirectoryNode" />
               <item name="materias" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Registro Estudiantes" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Registro Estudiantes" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="prog2" type="462c0819:PsiDirectoryNode" />
+              <item name="estudiantes" type="462c0819:PsiDirectoryNode" />
+              <item name="menu" type="462c0819:PsiDirectoryNode" />
+              <item name="seccion" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -362,6 +407,14 @@
       <option name="presentableId" value="Default" />
       <updated>1527105946627</updated>
     </task>
+    <task id="LOCAL-00001" summary="Agregar version de archivos, ID de estudiante automático y opciones de ayuda">
+      <created>1529098889045</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1529098889045</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -400,80 +453,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Agregar version de archivos, ID de estudiante automático y opciones de ayuda" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregar version de archivos, ID de estudiante automático y opciones de ayuda" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/data/Estudiante.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/data/Cedula.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/data/Materia.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/estudiantes/MenuListarEstudiantes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="18" column="65" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/Entrada.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="28" lean-forward="true" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/saveio/SaveWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/data/Estudiante.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/data/AreaAcademica.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="46" lean-forward="true" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/estudiantes/MenuBuscarEstudiante.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="20" column="44" lean-forward="true" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/estudiantes/MenuCrearEstudiante.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -506,30 +490,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuEstandar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="11" column="29" lean-forward="true" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuSalir.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="16" column="21" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/materias/MenuMaterias.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="173" selection-start-line="11" selection-start-column="173" selection-end-line="11" selection-end-column="195" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -630,24 +590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuInicio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="10" column="75" selection-start-line="10" selection-start-column="75" selection-end-line="10" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuBucle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="23" lean-forward="true" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-          <folding>
-            <element signature="e#198#199#0" expanded="true" />
-            <element signature="e#230#231#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/saveio/SaveWriter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-34">
@@ -728,24 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/data/Seccion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/data/HoraDia.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="24" column="49" lean-forward="true" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
-          <folding>
-            <element signature="e#572#573#0" expanded="true" />
-            <element signature="e#660#661#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/data/Materia.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -772,13 +696,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/estudiantes/MenuCrearEstudiante.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="24" column="10" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/Entrada.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="397">
@@ -786,30 +703,234 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/saveio/SaveReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/estudiantes/MenuCrearEstudiante.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+          <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/data/HoraDia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="24" column="49" lean-forward="true" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
+          <folding>
+            <element signature="e#572#573#0" expanded="true" />
+            <element signature="e#660#661#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/data/Seccion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/data/Registro.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="78" column="39" lean-forward="true" selection-start-line="78" selection-start-column="39" selection-end-line="78" selection-end-column="39" />
+        <state relative-caret-position="204">
+          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/saveio/SaveReader.java">
+    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/materias/MenuMaterias.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="48" column="43" selection-start-line="48" selection-start-column="43" selection-end-line="48" selection-end-column="43" />
+        <state relative-caret-position="187">
+          <caret line="11" column="197" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="197" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuBorrarSeccion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#238#239#0" expanded="true" />
+            <element signature="e#265#266#0" expanded="true" />
+            <element signature="e#349#350#0" expanded="true" />
+            <element signature="e#377#378#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuVerEstudiantesSeccion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#246#247#0" expanded="true" />
+            <element signature="e#273#274#0" expanded="true" />
+            <element signature="e#357#358#0" expanded="true" />
+            <element signature="e#385#386#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuAgregarEstudianteSeccion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#249#250#0" expanded="true" />
+            <element signature="e#276#277#0" expanded="true" />
+            <element signature="e#360#361#0" expanded="true" />
+            <element signature="e#388#389#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuListarSecciones.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#240#241#0" expanded="true" />
+            <element signature="e#267#268#0" expanded="true" />
+            <element signature="e#351#352#0" expanded="true" />
+            <element signature="e#379#380#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuBuscarSeccionMateria.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#245#246#0" expanded="true" />
+            <element signature="e#270#271#0" expanded="true" />
+            <element signature="e#354#355#0" expanded="true" />
+            <element signature="e#382#383#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuBuscarSeccionEstudiante.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#248#249#0" expanded="true" />
+            <element signature="e#294#295#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuCrearSeccion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#237#238#0" expanded="true" />
+            <element signature="e#264#265#0" expanded="true" />
+            <element signature="e#348#349#0" expanded="true" />
+            <element signature="e#376#377#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuSecciones.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#249#250#0" expanded="true" />
+            <element signature="e#276#277#0" expanded="true" />
+            <element signature="e#323#324#0" expanded="true" />
+            <element signature="e#350#351#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuInicio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuSalir.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+          <folding>
+            <element signature="e#232#233#0" expanded="true" />
+            <element signature="e#262#263#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuEditarSeccion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/seccion/MenuBuscarSeccion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="46" lean-forward="true" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuBucle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+          <folding>
+            <element signature="e#198#199#0" expanded="true" />
+            <element signature="e#230#231#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/prog2/estudiantes/menu/MenuEstandar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
         </state>
       </provider>
     </entry>
