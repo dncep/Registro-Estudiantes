@@ -18,7 +18,12 @@ public class MenuBuscarMateria implements Menu {
     @Override
     public boolean seleccionar(Registro registro, Scanner scanner) {
         ArrayList<Materia> materias = registro.materias;
-        String busca = Util.normalizar(Entrada.getString("Digite el codigo, nombre o area de la materia", scanner)).toLowerCase();
+        String busca;
+
+        while("?".equals(busca = Util.normalizar(Entrada.getString("Digite el codigo, nombre o area de la materia*", scanner)).toLowerCase())) {
+            Entrada.ayudaArea();
+        }
+
         boolean existe= false;
         for(Materia materia : materias) {
             if(materia.codigo.equalsIgnoreCase(busca) ||
@@ -31,7 +36,7 @@ public class MenuBuscarMateria implements Menu {
             }
         }
         if(!existe) {
-            System.out.println("Código o nombre no encontrado");
+            System.out.println("No hay materias con esas condiciones");
         }
         return true;
     }

@@ -22,7 +22,7 @@ public class MenuCrearEstudiante implements Menu {
         estudiante.apellido = Entrada.getString("Introduzca el apellido", scanner);
         estudiante.fechaNacimiento = Entrada.getFecha("Introduzca la fecha de nacimiento", scanner);
         estudiante.estado = Entrada.getEstado("Introduzca el estado del estudiante", scanner);
-        estudiante.id = Entrada.getInt("Introduzca el ID o matrícula del estudiante", scanner, n -> n >= 0);
+        estudiante.id = registro.ID_ESTUDIANTE++;//Entrada.getInt("Introduzca el ID o matrícula del estudiante", scanner, n -> n >= 0);
         estudiante.carrera = Entrada.getCarrera("Introduzca la carrera del estudiante", scanner);
         estudiante.cedula = Entrada.getCedula("Introduzca la cédula del estudiante", scanner);
         estudiante.esExtranjero = Entrada.getBoolean("El estudiante es extranjero", scanner);

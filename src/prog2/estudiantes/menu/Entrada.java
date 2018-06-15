@@ -99,12 +99,14 @@ public class Entrada {
      * */
     public static Cedula getCedula(String instruccion, Scanner scanner) {
         while(true) {
-            System.out.print(instruccion + ": ");
-            String input = scanner.nextLine();
+            System.out.print(instruccion + "*: ");
+            String input = scanner.nextLine().trim();
 
             Cedula cedula = Cedula.crearCedula(input);
             if(cedula != null) {
                 return cedula;
+            } else if(input.equals("?")) {
+                System.out.println("Introduzca una cédula en formato XXXXXXXXXXX o XXX-XXXXXXX-X");
             } else {
                 System.out.println("Entrada '" + input + "' inválida");
             }
@@ -122,11 +124,12 @@ public class Entrada {
      * */
     public static boolean getBoolean(String instruccion, Scanner scanner) {
         while(true) {
-            System.out.print(instruccion + ": ");
+            System.out.print(instruccion + "*: ");
             String input = scanner.nextLine().trim().toUpperCase();
 
             if(VALORES_VERDADEROS.contains(input)) return true;
             else if(VALORES_FALSOS.contains(input)) return false;
+            else if(input.equals("?")) System.out.println("Valores válidos: si/no");
             else System.out.println("Entrada '" + input + "' inválida");;
         }
     }
@@ -141,14 +144,18 @@ public class Entrada {
      * */
     public static Estado getEstado(String instruccion, Scanner scanner) {
         while(true) {
-            System.out.print(instruccion + ": ");
+            System.out.print(instruccion + "*: ");
             String input = Util.normalizar(scanner.nextLine().trim().toUpperCase());
 
-            for(Estado estado : Estado.values()) {
-                if(Util.normalizar(estado.toString().toUpperCase()).equals(input)) return estado;
-            }
+            if(input.equals("?")) {
+                ayudaEstado();
+            } else {
+                for(Estado estado : Estado.values()) {
+                    if(Util.normalizar(estado.toString().toUpperCase()).equals(input)) return estado;
+                }
 
-            System.out.println("Entrada '" + input + "' inválida");;
+                System.out.println("Entrada '" + input + "' inválida");;
+            }
         }
     }
 
@@ -162,14 +169,18 @@ public class Entrada {
      * */
     public static Carrera getCarrera(String instruccion, Scanner scanner) {
         while(true) {
-            System.out.print(instruccion + ": ");
+            System.out.print(instruccion + "*: ");
             String input = scanner.nextLine().trim().toUpperCase();
 
-            for(Carrera carrera : Carrera.values()) {
-                if(carrera.getCodigo().equals(input) || Util.normalizar(carrera.getNombre().toUpperCase()).equals(Util.normalizar(input))) return carrera;
-            }
+            if(input.equals("?")) {
+                ayudaCarrera();
+            } else {
+                for(Carrera carrera : Carrera.values()) {
+                    if(carrera.getCodigo().equals(input) || Util.normalizar(carrera.getNombre().toUpperCase()).equals(Util.normalizar(input))) return carrera;
+                }
 
-            System.out.println("Entrada '" + input + "' inválida");;
+                System.out.println("Entrada '" + input + "' inválida");;
+            }
         }
     }
 
@@ -183,14 +194,39 @@ public class Entrada {
      * */
     public static AreaAcademica getArea(String instruccion, Scanner scanner) {
         while(true) {
-            System.out.print(instruccion + ": ");
+            System.out.print(instruccion + "*: ");
             String input = scanner.nextLine().trim().toUpperCase();
 
-            for(AreaAcademica area : AreaAcademica.values()) {
-                if(area.getCodigo().equals(input) || Util.normalizar(area.getNombre().toUpperCase()).equals(Util.normalizar(input))) return area;
-            }
+            if(input.equals("?")) {
+                ayudaArea();
+            } else {
+                for(AreaAcademica area : AreaAcademica.values()) {
+                    if(area.getCodigo().equals(input) || Util.normalizar(area.getNombre().toUpperCase()).equals(Util.normalizar(input))) return area;
+                }
 
-            System.out.println("Entrada '" + input + "' inválida");;
+                System.out.println("Entrada '" + input + "' inválida");;
+            }
+        }
+    }
+
+    public static void ayudaEstado() {
+        System.out.println("Estados válidos:");
+        for(Estado estado : Estado.values()) {
+            System.out.println("    " + estado);
+        }
+    }
+
+    public static void ayudaCarrera() {
+        System.out.println("Carreras válidas:");
+        for(Carrera carrera : Carrera.values()) {
+            System.out.println("    " + carrera.getCodigo() + " / " + carrera.getNombre());
+        }
+    }
+
+    public static void ayudaArea() {
+        System.out.println("Áreas académicas válidas:");
+        for(AreaAcademica area : AreaAcademica.values()) {
+            System.out.println("    " + area.getCodigo() + " / " + area.getNombre());
         }
     }
 }

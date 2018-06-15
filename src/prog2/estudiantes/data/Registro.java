@@ -13,6 +13,9 @@ import java.util.ArrayList;
  * Objeto destinado a almacenar los datos del sistema, incluyendo los estudiantes y las materias.
  * */
 public class Registro {
+
+    public static final byte VERSION_DATA = 1;
+
     /**
      * Lista para los estudiantes.
      * */
@@ -25,6 +28,11 @@ public class Registro {
      * El fichero en el cual almacenar los datos persistentes.
      * */
     private final File file;
+
+    /**
+     * El ID del siguiente estudiante a crear.
+     * */
+    public int ID_ESTUDIANTE = 1100000;
 
     /**
      * El ID de la siguiente materia a crear.
@@ -52,11 +60,17 @@ public class Registro {
      * Borra los datos en este objeto y los llena con los datos presentes en el fichero correspondiente a este registro.
      * */
     public void cargar() {
+        ID_ESTUDIANTE = 1100000;
+        ID_MATERIAS = 0;
         estudiantes.clear();
         materias.clear();
 
         try(FileInputStream fis = new FileInputStream(file)) {
             SaveReader sr = new SaveReader(fis);
+
+            int versionArchivo = sr.readByte();
+
+            if(versionArchivo >= 1) ID_ESTUDIANTE = sr.readInt();
             int cantEstudiantes = sr.readByte();
             for(int i = 0; i < cantEstudiantes; i++) {
                 Estudiante est = new Estudiante();
@@ -93,7 +107,11 @@ public class Registro {
 
         try(FileOutputStream fos = new FileOutputStream(file)) {
             SaveWriter sw = new SaveWriter(fos);
+
+            sw.writeByte(VERSION_DATA);
+
             //Estudiantes
+            sw.writeInt(ID_ESTUDIANTE);
             sw.writeByte(estudiantes.size());
 
             for(Estudiante est : estudiantes) {

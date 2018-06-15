@@ -17,15 +17,4 @@ public class Estudiante {
 
     public Estudiante() {
     }
-
-    public Estudiante(String nombre, String apellido, Calendar fechaNacimiento, Estado estado, int id, Carrera carrera, Cedula cedula, boolean esExtranjero) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.fechaNacimiento = fechaNacimiento;
-        this.estado = estado;
-        this.id = id;
-        this.carrera = carrera;
-        this.cedula = cedula;
-        this.esExtranjero = esExtranjero;
-    }
 }
