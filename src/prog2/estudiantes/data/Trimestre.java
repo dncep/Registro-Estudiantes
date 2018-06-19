@@ -1,5 +1,7 @@
 package prog2.estudiantes.data;
 
+import java.util.Objects;
+
 public class Trimestre {
     private MesTrimestre mes;
     private int anio;
@@ -12,5 +14,20 @@ public class Trimestre {
     @Override
     public String toString() {
         return mes.formato.replace("%d", "" + anio).replace("%d", "" + (anio+1));
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Trimestre trimestre = (Trimestre) o;
+        return anio == trimestre.anio &&
+                mes == trimestre.mes;
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(mes, anio);
     }
 }

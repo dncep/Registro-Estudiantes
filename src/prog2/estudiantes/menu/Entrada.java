@@ -46,6 +46,7 @@ public class Entrada {
         int d = getInt("\tIntroduzca el día del mes", scanner, n -> n >= 1 && n <= ((m == 2) ? (bisiesto ? 29 : 28) : (30 + ((m <= 7) ? (n % 2) : ((n+1) % 2)))));
         Calendar date = Calendar.getInstance();
         date.set(a, m-1, d);
+
         return date;
     }
 
@@ -207,13 +208,52 @@ public class Entrada {
     }
 
     public static Trimestre getTrimestre(String instruccion, Scanner scanner) {
-        //TODO
-        return null;
+        while(true) {
+
+            String input = getString(instruccion + "*", scanner);
+            if(input.equals("?")) {
+                ayudaTrimestre();
+                continue;
+            }
+            String[] segmentos = input.split(" ");
+            if(segmentos.length != 2) {
+                System.out.println("Formato inválido");
+            } else {
+                String nombre = segmentos[0].toUpperCase();
+                MesTrimestre mes = null;
+                for(MesTrimestre m : MesTrimestre.values()) {
+                    if(m.name().equals(nombre)) {
+                        mes = m;
+                        break;
+                    }
+                }
+                if(mes == null) {
+                    System.out.println("Formato inválido");
+                    continue;
+                }
+
+                int anio = -1;
+                try {
+                    anio = Integer.parseInt(segmentos[1]);
+                } catch(NumberFormatException x) {
+                    System.out.println("Formato inválido");
+                    continue;
+                }
+
+                return new Trimestre(mes, anio);
+            }
+        }
     }
 
     public static HoraDia getHoraDia(String instruccion, Scanner scanner) {
-        //TODO
-        return null;
+        while (true) {
+            int hora  = getInt ("Introduzca la hora: ", scanner);
+            int fin = hora + getInt ("Introduzca la longitud de la hora: ", scanner);
+
+            if(hora > 0  && hora < 24 && fin <= 24) {
+                return new HoraDia (hora, fin);
+            } else System.out.println("Horas introducidas inválidas");
+        }
     }
 
     public static DiaSemana getDiaSemana(String instruccion, Scanner scanner) {
@@ -234,17 +274,18 @@ public class Entrada {
         }
     }
 
-    public static Horario editarHorario(Horario horario, Scanner scanner) {
+    public static Horario editarHorario(String instruccion, Horario horario, Scanner scanner) {
+        System.out.println(instruccion + ": ");
         horario = horario.duplicate();
         while(true) {
             System.out.println("Horario actual:");
             for(DiaSemana dia : DiaSemana.values()) {
-                System.out.print(dia.getNombre() + ": ");
+                System.out.print("    " + dia.getNombre() + ": ");
                 if(horario.getMapa().containsKey(dia)) System.out.print(horario.getMapa().get(dia));
                 System.out.println();
             }
 
-            if(getBoolean("Terminar?", scanner)) break;
+            if(!getBoolean("¿Continuar editando?", scanner)) break;
 
             DiaSemana dia = getDiaSemana("Introduzca el dia que desea editar", scanner);
             HoraDia hora = getHoraDia("Introduzca las horas para el día " + dia.getNombre(), scanner);
@@ -274,6 +315,20 @@ public class Entrada {
         for(AreaAcademica area : AreaAcademica.values()) {
             System.out.println("    " + area.getCodigo() + " / " + area.getNombre());
         }
+    }
+
+    public static void ayudaMesTrimestre() {
+        System.out.println("Meses trimestrales válidos:");
+        for(MesTrimestre mes: MesTrimestre.values()) {
+            System.out.println("    " + mes.getNombre());
+        }
+    }
+
+    public static void ayudaTrimestre() {
+        System.out.println("Formato trimestre:");
+        System.out.println("[MES] [AÑO]");
+        ayudaMesTrimestre();
+        System.out.println("Ejemplo: Agosto 2018");
     }
 
     public static void ayudaDiaSemana() {

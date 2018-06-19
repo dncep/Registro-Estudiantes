@@ -21,4 +21,8 @@ public enum MesTrimestre {
     public String getCorto() {
         return corto;
     }
+
+    public String getNombre() {
+        return corto.substring(0, corto.indexOf(' '));
+    }
 }
