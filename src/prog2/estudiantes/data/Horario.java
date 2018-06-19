@@ -6,6 +6,9 @@ import java.util.Map;
 public class Horario {
     private HashMap<DiaSemana, HoraDia> horas = new HashMap<>();
 
+    public Horario() {
+    }
+
     public boolean choca(Horario horario) {
         for(DiaSemana dia : DiaSemana.values()) {
             HoraDia este = this.horas.get(dia);
@@ -31,5 +34,17 @@ public class Horario {
         }
 
         return sb.toString();
+    }
+
+    public HashMap<DiaSemana, HoraDia> getMapa() {
+        return horas;
+    }
+
+    public Horario duplicate() {
+        Horario nuevo = new Horario();
+        for(Map.Entry<DiaSemana, HoraDia> entry : this.horas.entrySet()) {
+            nuevo.horas.put(entry.getKey(), entry.getValue().duplicate());
+        }
+        return nuevo;
     }
 }

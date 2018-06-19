@@ -15,4 +15,12 @@ public enum DiaSemana {
         this.nombre = nombre;
         this.corto = corto;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getCorto() {
+        return corto;
+    }
 }

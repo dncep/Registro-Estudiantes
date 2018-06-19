@@ -2,10 +2,7 @@ package prog2.estudiantes.menu;
 
 import prog2.estudiantes.data.*;
 
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.Collection;
-import java.util.Scanner;
+import java.util.*;
 import java.util.function.Predicate;
 
 public class Entrada {
@@ -209,6 +206,55 @@ public class Entrada {
         }
     }
 
+    public static Trimestre getTrimestre(String instruccion, Scanner scanner) {
+        //TODO
+        return null;
+    }
+
+    public static HoraDia getHoraDia(String instruccion, Scanner scanner) {
+        //TODO
+        return null;
+    }
+
+    public static DiaSemana getDiaSemana(String instruccion, Scanner scanner) {
+        while(true) {
+            System.out.print(instruccion + "*: ");
+            String input = scanner.nextLine().trim().toUpperCase();
+
+            if(input.equals("?")) {
+                ayudaDiaSemana();
+            } else {
+                for(DiaSemana dia : DiaSemana.values()) {
+                    if(dia.getNombre().toUpperCase().equals(input) || dia.getCorto().toUpperCase().equals(input))
+                        return dia;
+                }
+
+                System.out.println("Entrada '" + input + "' inválida");;
+            }
+        }
+    }
+
+    public static Horario editarHorario(Horario horario, Scanner scanner) {
+        horario = horario.duplicate();
+        while(true) {
+            System.out.println("Horario actual:");
+            for(DiaSemana dia : DiaSemana.values()) {
+                System.out.print(dia.getNombre() + ": ");
+                if(horario.getMapa().containsKey(dia)) System.out.print(horario.getMapa().get(dia));
+                System.out.println();
+            }
+
+            if(getBoolean("Terminar?", scanner)) break;
+
+            DiaSemana dia = getDiaSemana("Introduzca el dia que desea editar", scanner);
+            HoraDia hora = getHoraDia("Introduzca las horas para el día " + dia.getNombre(), scanner);
+
+            horario.colocar(dia, hora);
+        }
+
+        return horario;
+    }
+
     public static void ayudaEstado() {
         System.out.println("Estados válidos:");
         for(Estado estado : Estado.values()) {
@@ -227,6 +273,13 @@ public class Entrada {
         System.out.println("Áreas académicas válidas:");
         for(AreaAcademica area : AreaAcademica.values()) {
             System.out.println("    " + area.getCodigo() + " / " + area.getNombre());
+        }
+    }
+
+    public static void ayudaDiaSemana() {
+        System.out.println("Días de la semana válidos:");
+        for(DiaSemana dia : DiaSemana.values()) {
+            System.out.println("    " + dia.getNombre() + " / " + dia.getCorto());
         }
     }
 }

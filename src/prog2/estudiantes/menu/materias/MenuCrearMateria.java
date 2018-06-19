@@ -17,7 +17,7 @@ public class MenuCrearMateria implements Menu {
     public boolean seleccionar(Registro registro, Scanner scanner) {
         Materia materia = new Materia();
 
-        materia.id = registro.ID_MATERIAS++;
+        materia.id = registro.ID_MATERIA++;
         materia.codigo = Entrada.getString("Introduzca el código de la materia", scanner);
         materia.nombre = Entrada.getString("Introduzca el nombre de la materia", scanner);
         materia.area = Entrada.getArea("Introduzca el área académica de la materia", scanner);

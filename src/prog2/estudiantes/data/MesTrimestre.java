@@ -1,14 +1,24 @@
 package prog2.estudiantes.data;
 
 public enum MesTrimestre {
-    FEBRERO("Febrero-Mayo %d"),
-    MAYO("Mayo-Agosto %d"),
-    AGOSTO("Agosto-Noviembre %d"),
-    NOVIEMBRE("Noviembre %d-Febrero %d");
+    FEBRERO("Febrero-Mayo %d", "Febrero %d"),
+    MAYO("Mayo-Agosto %d", "Mayo %d"),
+    AGOSTO("Agosto-Noviembre %d", "Agosto %d"),
+    NOVIEMBRE("Noviembre %d-Febrero %d", "Noviembre %d");
 
-    public String formato;
+    String formato;
+    String corto;
 
-    MesTrimestre(String formato) {
+    MesTrimestre(String formato, String corto) {
         this.formato = formato;
+        this.corto = corto;
+    }
+
+    public String getFormato() {
+        return formato;
+    }
+
+    public String getCorto() {
+        return corto;
     }
 }

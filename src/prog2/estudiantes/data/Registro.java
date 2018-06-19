@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * */
 public class Registro {
 
-    public static final byte VERSION_DATA = 1;
+    public static final byte VERSION_DATA = 2;
 
     /**
      * Lista para los estudiantes.
@@ -41,7 +41,12 @@ public class Registro {
     /**
      * El ID de la siguiente materia a crear.
      * */
-    public int ID_MATERIAS = 0;
+    public int ID_MATERIA = 0;
+
+    /**
+     * El ID de la siguiente seccion a crear.
+     * */
+    public int ID_SECCION = 0;
 
     /**
      * Construye un registro que se guarda en el fichero dado.
@@ -65,7 +70,8 @@ public class Registro {
      * */
     public void cargar() {
         ID_ESTUDIANTE = 1100000;
-        ID_MATERIAS = 0;
+        ID_MATERIA = 0;
+        ID_SECCION = 0;
         estudiantes.clear();
         materias.clear();
 
@@ -89,7 +95,7 @@ public class Registro {
                 estudiantes.add(est);
             }
 
-            ID_MATERIAS = sr.readByte();
+            ID_MATERIA = (versionArchivo >= 2) ? sr.readInt() : sr.readByte();
             int cantMaterias = sr.readByte();
             for(int i = 0; i < cantMaterias; i++) {
                 Materia mat = new Materia();
@@ -99,6 +105,8 @@ public class Registro {
                 mat.id = sr.readByte();
                 materias.add(mat);
             }
+
+            if(versionArchivo >= 2) ID_SECCION = sr.readInt();
         } catch(IOException x) {
             x.printStackTrace();
         }
@@ -129,7 +137,7 @@ public class Registro {
                 sw.writeBoolean(est.esExtranjero);
             }
 
-            sw.writeByte(ID_MATERIAS);
+            sw.writeInt(ID_MATERIA);
             sw.writeByte(materias.size());
 
             for(Materia mat : materias) {
@@ -138,6 +146,8 @@ public class Registro {
                 sw.writeByte(mat.area.ordinal());
                 sw.writeByte(mat.id);
             }
+
+            sw.writeInt(ID_SECCION);
         } catch(IOException x) {
             x.printStackTrace();
         }

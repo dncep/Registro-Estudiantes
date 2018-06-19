@@ -25,6 +25,10 @@ public class HoraDia {
         return Math.max(this.inicio, hora.inicio) < Math.min(this.fin, hora.fin);
     }
 
+    public HoraDia duplicate() {
+        return new HoraDia(inicio, fin);
+    }
+
     @Override
     public String toString() {
         return inicio + "/" + fin;
@@ -41,7 +45,6 @@ public class HoraDia {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(inicio, fin);
     }
 }
