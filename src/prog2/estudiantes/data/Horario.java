@@ -28,11 +28,12 @@ public class Horario {
 
         for(Map.Entry<DiaSemana, HoraDia> entry : horas.entrySet()) {
             sb.append(entry.getKey().corto);
-            sb.append(":");
+            sb.append(' ');
             sb.append(entry.getValue());
-            sb.append("; ");
+            sb.append(", ");
         }
 
+        if(sb.length() > 1) sb.setLength(sb.length()-2);
         return sb.toString();
     }
 

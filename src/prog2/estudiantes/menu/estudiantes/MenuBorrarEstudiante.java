@@ -2,6 +2,7 @@ package prog2.estudiantes.menu.estudiantes;
 
 import prog2.estudiantes.data.Estudiante;
 import prog2.estudiantes.data.Registro;
+import prog2.estudiantes.data.Seccion;
 import prog2.estudiantes.menu.Entrada;
 import prog2.estudiantes.menu.Menu;
 
@@ -18,11 +19,21 @@ public class MenuBorrarEstudiante implements Menu {
     public boolean seleccionar(Registro registro, Scanner scanner) {
         ArrayList<Estudiante> estudiantes = registro.estudiantes;
         int id = Entrada.getInt("Introduzca el ID/matrícula del estudiante", scanner);
+
         for(int i = 0; i < estudiantes.size(); i++) {
             Estudiante est = estudiantes.get(i);
             if(est.id == id) {
                 estudiantes.remove(i);
+
                 System.out.println("Estudiante " + est.nombre + " " + est.apellido + " ha sido borrado");
+                //Borrar de secciones
+
+                for(Seccion sec : registro.secciones) {
+                    if(sec.estudiantes.remove(est)) {
+                        System.out.println("    Fue borrado de la sección " + sec.codigo + " - " + sec.trimestre);
+                    }
+                }
+
                 return true;
             }
         }

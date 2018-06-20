@@ -1,5 +1,9 @@
 package prog2.estudiantes.saveio;
 
+import prog2.estudiantes.data.DiaSemana;
+import prog2.estudiantes.data.HoraDia;
+import prog2.estudiantes.data.Horario;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Calendar;
@@ -36,6 +40,22 @@ public class SaveWriter {
         writeInt(date.get(Calendar.YEAR));
         writeByte(date.get(Calendar.MONTH));
         writeByte(date.get(Calendar.DAY_OF_MONTH));
+    }
+
+    public void writeHoraDia(HoraDia hora) throws IOException {
+        if(hora != null) {
+            writeByte(hora.getInicio());
+            writeByte(hora.getFin());
+        } else {
+            writeByte(0);
+            writeByte(0);
+        }
+    }
+
+    public void writeHorario(Horario horario) throws IOException {
+        for(DiaSemana dia : DiaSemana.values()) {
+            writeHoraDia(horario.getMapa().get(dia));
+        }
     }
 
     public void writeBoolean(boolean bool) throws IOException {

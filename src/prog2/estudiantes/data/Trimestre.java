@@ -3,8 +3,8 @@ package prog2.estudiantes.data;
 import java.util.Objects;
 
 public class Trimestre {
-    private MesTrimestre mes;
-    private int anio;
+    public MesTrimestre mes;
+    public int anio;
 
     public Trimestre(MesTrimestre mes, int anio) {
         this.mes = mes;

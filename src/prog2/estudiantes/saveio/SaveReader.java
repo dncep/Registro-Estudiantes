@@ -1,5 +1,9 @@
 package prog2.estudiantes.saveio;
 
+import prog2.estudiantes.data.DiaSemana;
+import prog2.estudiantes.data.HoraDia;
+import prog2.estudiantes.data.Horario;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Calendar;
@@ -71,6 +75,22 @@ public class SaveReader {
         return date;
     }
 
+    public HoraDia readHoraDia() throws IOException {
+        int inicio = readByte();
+        int fin = readByte();
+
+        if(inicio == 0 && fin == 0) return null;
+        else return new HoraDia(inicio, fin);
+    }
+
+    public Horario readHorario() throws IOException {
+        Horario horario = new Horario();
+        for(DiaSemana dia : DiaSemana.values()) {
+            HoraDia hora = readHoraDia();
+            if(hora != null) horario.colocar(dia, hora);
+        }
+        return horario;
+    }
 
     public boolean readBoolean() throws IOException {
         return readByte() == 1;

@@ -13,7 +13,7 @@ public class MenuInicio implements Menu, MenuEstandar {
             new MenuBucle(new MenuEstudiantes()),
             new MenuBucle(new MenuMaterias()),
             new MenuBucle(new MenuSecciones()),
-            new MenuSalir("Salir"));
+            new MenuSalir("Guardar y salir"));
 
     @Override
     public String getNombre() {

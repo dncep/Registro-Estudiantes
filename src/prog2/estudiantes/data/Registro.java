@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * */
 public class Registro {
 
-    public static final byte VERSION_DATA = 2;
+    public static final byte VERSION_DATA = 3;
 
     /**
      * Lista para los estudiantes.
@@ -107,6 +107,42 @@ public class Registro {
             }
 
             if(versionArchivo >= 2) ID_SECCION = sr.readInt();
+            if(versionArchivo >= 3) {
+                int cantSecciones = sr.readInt();
+                for(int i = 0; i < cantSecciones; i++) {
+                    Seccion sec = new Seccion();
+
+                    sec.id = sr.readInt();
+                    sec.profesor = sr.readString();
+                    sec.aula = sr.readString();
+
+                    int cantEstudiantesEnSeccion = sr.readInt();
+                    for(int j = 0; j < cantEstudiantesEnSeccion; j++) {
+                        int id = sr.readInt();
+                        for(Estudiante est : sec.estudiantes) {
+                            if(est.id == id) {
+                                sec.estudiantes.add(est);
+                                break;
+                            }
+                        }
+                    }
+
+                    int idMateria = sr.readInt();
+                    for(Materia mat : materias) {
+                        if(mat.id == idMateria) {
+                            sec.materia = mat;
+                            break;
+                        }
+                    }
+
+                    MesTrimestre mes = MesTrimestre.values()[sr.readByte()];
+                    int anio = sr.readInt();
+                    sec.trimestre = new Trimestre(mes, anio);
+                    sec.horario = sr.readHorario();
+                    sec.codigo = sr.readString();
+                    secciones.add(sec);
+                }
+            }
         } catch(IOException x) {
             x.printStackTrace();
         }
@@ -148,6 +184,23 @@ public class Registro {
             }
 
             sw.writeInt(ID_SECCION);
+            sw.writeInt(secciones.size());
+            for(Seccion sec : secciones) {
+                sw.writeInt(sec.id);
+                sw.writeString(sec.profesor);
+                sw.writeString(sec.aula);
+
+                sw.writeInt(sec.estudiantes.size());
+                for(Estudiante est : sec.estudiantes) {
+                    sw.writeInt(est.id);
+                }
+
+                sw.writeInt(sec.materia.id);
+                sw.writeByte(sec.trimestre.mes.ordinal());
+                sw.writeInt(sec.trimestre.anio);
+                sw.writeHorario(sec.horario);
+                sw.writeString(sec.codigo);
+            }
         } catch(IOException x) {
             x.printStackTrace();
         }

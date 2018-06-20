@@ -128,7 +128,7 @@ public class Entrada {
             if(VALORES_VERDADEROS.contains(input)) return true;
             else if(VALORES_FALSOS.contains(input)) return false;
             else if(input.equals("?")) System.out.println("Valores válidos: si/no");
-            else System.out.println("Entrada '" + input + "' inválida");;
+            else System.out.println("Entrada '" + input + "' inválida");
         }
     }
 
@@ -152,7 +152,7 @@ public class Entrada {
                     if(Util.normalizar(estado.toString().toUpperCase()).equals(input)) return estado;
                 }
 
-                System.out.println("Entrada '" + input + "' inválida");;
+                System.out.println("Entrada '" + input + "' inválida");
             }
         }
     }
@@ -177,7 +177,7 @@ public class Entrada {
                     if(carrera.getCodigo().equals(input) || Util.normalizar(carrera.getNombre().toUpperCase()).equals(Util.normalizar(input))) return carrera;
                 }
 
-                System.out.println("Entrada '" + input + "' inválida");;
+                System.out.println("Entrada '" + input + "' inválida");
             }
         }
     }
@@ -202,11 +202,19 @@ public class Entrada {
                     if(area.getCodigo().equals(input) || Util.normalizar(area.getNombre().toUpperCase()).equals(Util.normalizar(input))) return area;
                 }
 
-                System.out.println("Entrada '" + input + "' inválida");;
+                System.out.println("Entrada '" + input + "' inválida");
             }
         }
     }
 
+    /**
+     * Solicita un trimestre (mes trimestral + año) al usuario. Si comete un error, lo solicitará de nuevo hasta
+     * conseguir un valor válido.
+     * @param instruccion El mensaje que muestra al solicitar el trimestre
+     * @param scanner El Scanner que utilizará para la entrada de información
+     *
+     * @return El trimestre insertado por el usuario
+     * */
     public static Trimestre getTrimestre(String instruccion, Scanner scanner) {
         while(true) {
 
@@ -232,7 +240,7 @@ public class Entrada {
                     continue;
                 }
 
-                int anio = -1;
+                int anio;
                 try {
                     anio = Integer.parseInt(segmentos[1]);
                 } catch(NumberFormatException x) {
@@ -245,10 +253,19 @@ public class Entrada {
         }
     }
 
+    /**
+     * Solicita un rango de hora al usuario por nombre o código. Si comete un error, lo solicitará de nuevo hasta
+     * conseguir un valor válido.
+     * @param instruccion El mensaje que muestra al solicitar el rango de hora
+     * @param scanner El Scanner que utilizará para la entrada de información
+     *
+     * @return El objeto HoraDia correspondiente a la información insertada por el usuario
+     * */
     public static HoraDia getHoraDia(String instruccion, Scanner scanner) {
         while (true) {
-            int hora  = getInt ("Introduzca la hora: ", scanner);
-            int fin = hora + getInt ("Introduzca la longitud de la hora: ", scanner);
+            System.out.println(instruccion + ": ");
+            int hora  = getInt ("Introduzca la hora de inicio (formato 24 horas): ", scanner);
+            int fin = hora + getInt ("Introduzca la longitud de la clase en horas: ", scanner);
 
             if(hora > 0  && hora < 24 && fin <= 24) {
                 return new HoraDia (hora, fin);
@@ -256,24 +273,40 @@ public class Entrada {
         }
     }
 
+    /**
+     * Solicita un día de la semana al usuario. Si comete un error, lo solicitará de nuevo hasta
+     * conseguir un valor válido.
+     * @param instruccion El mensaje que muestra al solicitar el día
+     * @param scanner El Scanner que utilizará para la entrada de información
+     *
+     * @return El día insertado por el usuario
+     * */
     public static DiaSemana getDiaSemana(String instruccion, Scanner scanner) {
         while(true) {
             System.out.print(instruccion + "*: ");
-            String input = scanner.nextLine().trim().toUpperCase();
+            String input = Util.normalizar(scanner.nextLine().trim().toUpperCase());
 
             if(input.equals("?")) {
                 ayudaDiaSemana();
             } else {
                 for(DiaSemana dia : DiaSemana.values()) {
-                    if(dia.getNombre().toUpperCase().equals(input) || dia.getCorto().toUpperCase().equals(input))
+                    if(Util.normalizar(dia.getNombre().toUpperCase()).equals(input) || dia.getCorto().toUpperCase().equals(input))
                         return dia;
                 }
 
-                System.out.println("Entrada '" + input + "' inválida");;
+                System.out.println("Entrada '" + input + "' inválida");
             }
         }
     }
 
+    /**
+     * Solicita modificar un horario al usuario. Retornará un objeto Horario diferente al recibido por parámetro
+     *
+     * @param instruccion El mensaje que muestra al editar el horario
+     * @param scanner El Scanner que utilizará para la entrada de información
+     *
+     * @return El nuevo horario ingresado por el usuario
+     * */
     public static Horario editarHorario(String instruccion, Horario horario, Scanner scanner) {
         System.out.println(instruccion + ": ");
         horario = horario.duplicate();
@@ -288,7 +321,7 @@ public class Entrada {
             if(!getBoolean("¿Continuar editando?", scanner)) break;
 
             DiaSemana dia = getDiaSemana("Introduzca el dia que desea editar", scanner);
-            HoraDia hora = getHoraDia("Introduzca las horas para el día " + dia.getNombre(), scanner);
+            HoraDia hora = getHoraDia("Horas de clase para el día " + dia.getNombre(), scanner);
 
             horario.colocar(dia, hora);
         }
@@ -296,6 +329,9 @@ public class Entrada {
         return horario;
     }
 
+    /**
+     * Muestra todas las opciones para insertar un estado académico; presentes en el enum Estado
+     * */
     public static void ayudaEstado() {
         System.out.println("Estados válidos:");
         for(Estado estado : Estado.values()) {
@@ -303,6 +339,9 @@ public class Entrada {
         }
     }
 
+    /**
+     * Muestra todas las opciones para insertar una carrera; presentes en el enum Carrera
+     * */
     public static void ayudaCarrera() {
         System.out.println("Carreras válidas:");
         for(Carrera carrera : Carrera.values()) {
@@ -310,6 +349,9 @@ public class Entrada {
         }
     }
 
+    /**
+     * Muestra todas las opciones para insertar un área académica; presentes en el enum AreaAcademica
+     * */
     public static void ayudaArea() {
         System.out.println("Áreas académicas válidas:");
         for(AreaAcademica area : AreaAcademica.values()) {
@@ -317,6 +359,9 @@ public class Entrada {
         }
     }
 
+    /**
+     * Muestra todas las opciones para insertar un mes trimestral; presentes en el enum MesTrimestre
+     * */
     public static void ayudaMesTrimestre() {
         System.out.println("Meses trimestrales válidos:");
         for(MesTrimestre mes: MesTrimestre.values()) {
@@ -324,6 +369,9 @@ public class Entrada {
         }
     }
 
+    /**
+     * Muestra el formato para insertar un trimestre, junto con las opciones para el mes trimestral
+     * */
     public static void ayudaTrimestre() {
         System.out.println("Formato trimestre:");
         System.out.println("[MES] [AÑO]");
@@ -331,6 +379,9 @@ public class Entrada {
         System.out.println("Ejemplo: Agosto 2018");
     }
 
+    /**
+     * Muestra todas las opciones para insertar un día de la semana; presentes en el enum DiaSemana
+     * */
     public static void ayudaDiaSemana() {
         System.out.println("Días de la semana válidos:");
         for(DiaSemana dia : DiaSemana.values()) {

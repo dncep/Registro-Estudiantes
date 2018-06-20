@@ -23,6 +23,17 @@ public class MenuBorrarMateria implements Menu {
             if(mat.codigo.equals(codigo)) {
                 materias.remove(i);
                 System.out.println("Materia " + mat.nombre + " ha sido borrada");
+
+                //Borrar seccion
+
+                registro.secciones.removeIf(s -> {
+                    if(s.materia == mat) {
+                        System.out.println("    Fue borrada la sección " + s.codigo + " - " + s.trimestre);
+                        return true;
+                    }
+                    return false;
+                });
+
                 return true;
             }
         }
