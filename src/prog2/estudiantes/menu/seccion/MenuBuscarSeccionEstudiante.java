@@ -16,25 +16,12 @@ public class MenuBuscarSeccionEstudiante implements Menu {
 
     @Override
     public boolean seleccionar(Registro registro, Scanner scanner) {
-        int idEst = Entrada.getInt("Introduzca el ID del estudiante", scanner);
-
-        Estudiante estudiante = null;
-        for(Estudiante est : registro.estudiantes) {
-            if(est.id == idEst) {
-                estudiante = est;
-                break;
-            }
-        }
-
-        if(estudiante == null) {
-            System.out.println("No se encontró ese estudiante");
-            return true;
-        }
+        Estudiante est = registro.getEstudiante("Introduzca el ID del estudiante", scanner);
 
         boolean encontrado = false;
 
         for(Seccion sec : registro.secciones) {
-            if(sec.estudiantes.contains(estudiante)) {
+            if(sec.estudiantes.contains(est)) {
                 System.out.println(sec.codigo + " " + sec.trimestre + " (ID: " + sec.id + ")");
                 System.out.println("\tProfesor: " + sec.profesor);
                 System.out.println("\tAula: " + sec.aula);
@@ -47,7 +34,7 @@ public class MenuBuscarSeccionEstudiante implements Menu {
             }
         }
 
-        if(!encontrado) System.out.println("No se encontró sección para el estudiante " + estudiante.nombre + " " + estudiante.apellido + " (" + estudiante.id + ")");
+        if(!encontrado) System.out.println("No se encontró sección para el estudiante " + est.nombre + " " + est.apellido + " (" + est.id + ")");
 
         return true;
     }

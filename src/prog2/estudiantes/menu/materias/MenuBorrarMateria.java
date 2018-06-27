@@ -16,28 +16,18 @@ public class MenuBorrarMateria implements Menu {
 
     @Override
     public boolean seleccionar(Registro registro, Scanner scanner) {
-        ArrayList<Materia> materias = registro.materias;
-        String codigo = Entrada.getString("Introduzca el codigo de la materia", scanner);
-        for(int i = 0; i < materias.size(); i++) {
-            Materia mat = materias.get(i);
-            if(mat.codigo.equals(codigo)) {
-                materias.remove(i);
-                System.out.println("Materia " + mat.nombre + " ha sido borrada");
+        Materia mat = registro.getMateria("Introduzca el código de la materia", scanner);
+        registro.materias.remove(mat);
+        System.out.println("Materia " + mat.nombre + " ha sido borrada");
 
-                //Borrar seccion
-
-                registro.secciones.removeIf(s -> {
-                    if(s.materia == mat) {
-                        System.out.println("    Fue borrada la sección " + s.codigo + " - " + s.trimestre);
-                        return true;
-                    }
-                    return false;
-                });
-
+        //Borrar seccion
+        registro.secciones.removeIf(s -> {
+            if(s.materia == mat) {
+                System.out.println("    Fue borrada la sección " + s.codigo + " - " + s.trimestre);
                 return true;
             }
-        }
-        System.out.println("Materia no encontrada");
+            return false;
+        });
         return true;
     }
 }

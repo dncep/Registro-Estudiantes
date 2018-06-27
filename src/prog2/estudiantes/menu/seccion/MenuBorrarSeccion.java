@@ -16,17 +16,9 @@ public class MenuBorrarSeccion implements Menu {
 
     @Override
     public boolean seleccionar(Registro registro, Scanner scanner) {
-        ArrayList<Seccion> secciones = registro.secciones;
-        int id = Entrada.getInt("Introduzca el ID: ", scanner);
-        for(int i = 0; i < secciones.size(); i++) {
-            Seccion secc = secciones.get(i);
-            if(secc.id == id) {
-                secciones.remove(i);
-                System.out.println("La seccion " + secc.codigo + " " + secc.trimestre + " ha sido borrada");
-                return true;
-            }
-        }
-        System.out.println("Seccion no encontrada");
+        Seccion sec = registro.getSeccion("Introduzca el ID de la sección", scanner);
+        registro.secciones.remove(sec);
+        System.out.println("La sección " + sec.codigo + " " + sec.trimestre + " ha sido borrada");
         return true;
     }
 }

@@ -17,27 +17,18 @@ public class MenuBorrarEstudiante implements Menu {
 
     @Override
     public boolean seleccionar(Registro registro, Scanner scanner) {
-        ArrayList<Estudiante> estudiantes = registro.estudiantes;
-        int id = Entrada.getInt("Introduzca el ID/matrícula del estudiante", scanner);
+        Estudiante est = registro.getEstudiante("Introduzca el ID del estudiante", scanner);
 
-        for(int i = 0; i < estudiantes.size(); i++) {
-            Estudiante est = estudiantes.get(i);
-            if(est.id == id) {
-                estudiantes.remove(i);
+        registro.estudiantes.remove(est);
 
-                System.out.println("Estudiante " + est.nombre + " " + est.apellido + " ha sido borrado");
-                //Borrar de secciones
+        System.out.println("Estudiante " + est.nombre + " " + est.apellido + " ha sido borrado");
 
-                for(Seccion sec : registro.secciones) {
-                    if(sec.estudiantes.remove(est)) {
-                        System.out.println("    Fue borrado de la sección " + sec.codigo + " - " + sec.trimestre);
-                    }
-                }
-
-                return true;
+        //Borrar de secciones
+        for(Seccion sec : registro.secciones) {
+            if(sec.estudiantes.remove(est)) {
+                System.out.println("    Fue borrado de la sección " + sec.codigo + " - " + sec.trimestre);
             }
         }
-        System.out.println("Estudiante no encontrado");
         return true;
     }
 }

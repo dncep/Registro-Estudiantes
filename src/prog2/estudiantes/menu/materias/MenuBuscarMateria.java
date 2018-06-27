@@ -24,13 +24,13 @@ public class MenuBuscarMateria implements Menu {
             Entrada.ayudaArea();
         }
 
-        boolean existe= false;
+        boolean existe = false;
         for(Materia materia : materias) {
             if(materia.codigo.equalsIgnoreCase(busca) ||
                     Util.normalizar(materia.nombre).toLowerCase().contains(busca) ||
                     Util.normalizar(materia.area.getNombre()).toLowerCase().contains(busca) ||
                     materia.area.getCodigo().toLowerCase().equals(busca)) {
-                existe=true;
+                existe = true;
                 System.out.println(materia.codigo + " - " + materia.nombre);
                 System.out.println("\tID: " + materia.id + " | Área: " + materia.area.getNombre());
             }

@@ -1,0 +1,20 @@
+<estudiantes>
+    <estudiante>
+        <nombre>Daniel</nombre>
+        <apellido>Cepeda</apellido>
+        <id>1074824</id>
+        <estado>ACTIVO</estado>
+        <carrera>IDS</carrera>
+        <extranjero>false</extranjero>
+        <fechaNacimiento>22-11-2001</fechaNacimiento>
+    </estudiante>
+    <estudiante>
+        <nombre>Daniel</nombre>
+        <apellido>Cepeda</apellido>
+        <id>1074824</id>
+        <estado>ACTIVO</estado>
+        <carrera>IDS</carrera>
+        <extranjero>false</extranjero>
+        <fechaNacimiento>22-11-2001</fechaNacimiento>
+    </estudiante>
+</estudiantes>

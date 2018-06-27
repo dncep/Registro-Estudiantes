@@ -1,0 +1,24 @@
+{
+  "estudiantes": [
+    {
+      "nombre": "Daniel",
+      "apellido": "Cepeda",
+      "id": 1074824,
+      "cedula": "101-0101010-1",
+      "estado": "ACTIVO",
+      "carrera": "IDS",
+      "extranjero": false,
+      "fecha_nacimiento": "22-11-2001"
+    },
+    {
+      "nombre": "Daniel",
+      "apellido": "Cepeda",
+      "id": 1074824,
+      "cedula": "101-0101010-1",
+      "estado": "ACTIVO",
+      "carrera": "IDS",
+      "extranjero": false,
+      "fecha_nacimiento": "22-11-2001"
+    }
+  ]
+}

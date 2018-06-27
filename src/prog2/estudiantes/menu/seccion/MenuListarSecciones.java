@@ -22,7 +22,7 @@ public class MenuListarSecciones implements Menu {
         System.out.println("Secciones (" + registro.secciones.size() + "):");
 
         for(Seccion sec : registro.secciones) {
-            System.out.println(sec.codigo + " - Trimestre " + sec.trimestre);
+            System.out.println(sec.codigo + " - Trimestre " + sec.trimestre + " (ID: " + sec.id + ")");
             System.out.println("    Profesor: " + sec.profesor);
             System.out.println("    Aula: " + sec.aula);
             System.out.println("    Materia: " + sec.materia);
@@ -30,8 +30,6 @@ public class MenuListarSecciones implements Menu {
             System.out.println("    Horario: " + sec.horario);
             System.out.println();
         }
-
-
         return true;
     }
 }

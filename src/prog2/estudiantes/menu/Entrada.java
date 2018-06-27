@@ -21,8 +21,9 @@ public class Entrada {
     public static String getString(String instruccion, Scanner scanner) {
         while(true) {
             System.out.print(instruccion + ": ");
-            String input = scanner.nextLine();
-            if(input.trim().length() > 0) {
+            String input = scanner.nextLine().trim();
+            if(input.length() > 0) {
+                if(Util.normalizar(input.toLowerCase()).equals("atras")) throw new AtrasExcepcion();
                 return input;
             } else {
                 System.out.println("Entrada '" + input + "' inválida");
@@ -75,6 +76,7 @@ public class Entrada {
         while(true) {
             System.out.print(instruccion + ": ");
             String input = scanner.nextLine();
+            if(Util.normalizar(input.toLowerCase()).equals("atras")) throw new AtrasExcepcion();
             try {
                 int n = Integer.parseInt(input);
                 if(validacion.test(n)) {
@@ -99,6 +101,7 @@ public class Entrada {
         while(true) {
             System.out.print(instruccion + "*: ");
             String input = scanner.nextLine().trim();
+            if(Util.normalizar(input.toLowerCase()).equals("atras")) throw new AtrasExcepcion();
 
             Cedula cedula = Cedula.crearCedula(input);
             if(cedula != null) {
@@ -124,6 +127,7 @@ public class Entrada {
         while(true) {
             System.out.print(instruccion + "*: ");
             String input = scanner.nextLine().trim().toUpperCase();
+            if(Util.normalizar(input.toLowerCase()).equals("atras")) throw new AtrasExcepcion();
 
             if(VALORES_VERDADEROS.contains(input)) return true;
             else if(VALORES_FALSOS.contains(input)) return false;
@@ -144,6 +148,7 @@ public class Entrada {
         while(true) {
             System.out.print(instruccion + "*: ");
             String input = Util.normalizar(scanner.nextLine().trim().toUpperCase());
+            if(Util.normalizar(input.toLowerCase()).equals("atras")) throw new AtrasExcepcion();
 
             if(input.equals("?")) {
                 ayudaEstado();
@@ -169,6 +174,7 @@ public class Entrada {
         while(true) {
             System.out.print(instruccion + "*: ");
             String input = scanner.nextLine().trim().toUpperCase();
+            if(Util.normalizar(input.toLowerCase()).equals("atras")) throw new AtrasExcepcion();
 
             if(input.equals("?")) {
                 ayudaCarrera();
@@ -194,6 +200,7 @@ public class Entrada {
         while(true) {
             System.out.print(instruccion + "*: ");
             String input = scanner.nextLine().trim().toUpperCase();
+            if(Util.normalizar(input.toLowerCase()).equals("atras")) throw new AtrasExcepcion();
 
             if(input.equals("?")) {
                 ayudaArea();
@@ -268,7 +275,7 @@ public class Entrada {
             int fin = hora + getInt ("Introduzca la longitud de la clase en horas: ", scanner);
 
             if(hora > 0  && hora < 24 && fin <= 24) {
-                return new HoraDia (hora, fin);
+                return new HoraDia(hora, fin);
             } else System.out.println("Horas introducidas inválidas");
         }
     }
@@ -285,6 +292,7 @@ public class Entrada {
         while(true) {
             System.out.print(instruccion + "*: ");
             String input = Util.normalizar(scanner.nextLine().trim().toUpperCase());
+            if(Util.normalizar(input.toLowerCase()).equals("atras")) throw new AtrasExcepcion();
 
             if(input.equals("?")) {
                 ayudaDiaSemana();
@@ -320,8 +328,15 @@ public class Entrada {
 
             if(!getBoolean("¿Continuar editando?", scanner)) break;
 
-            DiaSemana dia = getDiaSemana("Introduzca el dia que desea editar", scanner);
-            HoraDia hora = getHoraDia("Horas de clase para el día " + dia.getNombre(), scanner);
+            DiaSemana dia;
+            HoraDia hora;
+
+            try {
+                dia = getDiaSemana("Introduzca el dia que desea editar", scanner);
+                hora = getHoraDia("Horas de clase para el día " + dia.getNombre(), scanner);
+            } catch(AtrasExcepcion x) {
+                continue;
+            }
 
             horario.colocar(dia, hora);
         }

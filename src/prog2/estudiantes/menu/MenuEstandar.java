@@ -10,27 +10,22 @@ public interface MenuEstandar extends Menu {
     List<Menu> getOpciones();
 
     default boolean seleccionar(Registro registro, Scanner scanner) {
-        while(true) {
-            System.out.println(this.getNombre() + ": ");
-            int i = 0;
-            for(Menu menu : getOpciones()) {
-                System.out.println("\t" + (i+1) + ". " + menu.getNombre());
-                i++;
-            }
-            System.out.print("Introduzca el número de la opción a seleccionar: ");
-            String input = scanner.nextLine();
-            try {
-                i = Integer.parseInt(input);
-                if(i < 1 || i > getOpciones().size()) i = -1;
-            } catch(NumberFormatException x) {
-                i = -1;
-            }
-            if(i == -1) {
-                System.out.println("'" + input + "' no es un valor válido");
-            } else {
-                Menu opcion = getOpciones().get(i-1);
-                return opcion.seleccionar(registro, scanner);
-            }
+        System.out.println(this.getNombre() + ": ");
+        int i = 0;
+        for(Menu menu : getOpciones()) {
+            System.out.println("\t" + (i+1) + ". " + menu.getNombre());
+            i++;
+        }
+        try {
+            i = Entrada.getInt("Introduzca el número de la opción a seleccionar", scanner, n -> n >= 1 && n <= getOpciones().size());
+        } catch(AtrasExcepcion x) {
+            return false;
+        }
+        Menu opcion = getOpciones().get(i-1);
+        try {
+            return opcion.seleccionar(registro, scanner);
+        } catch(AtrasExcepcion x) {
+            return true;
         }
     }
 }

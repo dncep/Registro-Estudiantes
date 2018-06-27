@@ -17,31 +17,42 @@ public class MenuAgregarEstudianteSeccion implements Menu {
 
     @Override
     public boolean seleccionar(Registro registro, Scanner scanner) {
-        Estudiante agregar = null;
+        Estudiante est;
 
         while (true) {
-            int id = Entrada.getInt("Introduzca el ID/matrícula del estudiante", scanner);
-            for (Estudiante est : registro.estudiantes) {
-                if (est.id == id) {
-                    agregar = est;
-                }
-            }
-            if (agregar == null) {
-                System.out.print("El ID/matricula del estudiante que usted ingresó no existe");
-            } else if (agregar.estado == Estado.INACTIVO) {
+            est = registro.getEstudiante("Introduzca el ID del estudiante", scanner);
+            if (est.estado != Estado.ACTIVO) {
                 System.out.println("Solo se pueden agregar estudiantes activos");
-            } else break;
-        }
-        while(true) {
-            int idSec = Entrada.getInt("Introduzca el ID de la seccion", scanner);
-            for (Seccion sec : registro.secciones) {
-                if (sec.id == idSec) {
-                    sec.estudiantes.add(agregar);
-                    System.out.println("Estudiante " + agregar.nombre + " " + agregar.apellido + " fue agregado a la sección " + sec.codigo + " - " + sec.trimestre);
+            } else {
+                int registrados = 0;
+                for(Seccion sec : registro.secciones) {
+                    if(sec.estudiantes.contains(est)) registrados++;
+                }
+                if(registrados >= 5) {
+                    System.out.println("Un estudiante no puede estar registrado en más de 5 secciones");
                     return true;
+                } else break;
+            }
+        }
+        Seccion sec = registro.getSeccion("Introduzca el ID de la sección", scanner);
+        if(!sec.estudiantes.contains(est)) {
+
+            int registradosArea = 0;
+            for(Seccion otra : registro.secciones) {
+                if(otra.materia.area == sec.materia.area) {
+                    registradosArea++;
+                    if(registradosArea >= 2) {
+                        System.out.println("Un estudiante no puede estar registrado en más de 2 secciones de la misma área");
+                        return true;
+                    }
                 }
             }
-            System.out.println("No se encontró una sección con ese código");
+
+            sec.estudiantes.add(est);
+            System.out.println("Estudiante " + est.nombre + " " + est.apellido + " fue agregado a la sección " + sec);
+        } else {
+            System.out.println("Estudiante" + est.nombre + " " + est.apellido + " ya existe en la sección " + sec);
         }
+        return true;
     }
 }

@@ -1,0 +1,19 @@
+{
+  "materias": [
+    {
+      "area": "BASICAS",
+      "codigo": "CBM301",
+      "nombre": "Calculo Vectorial"
+    },
+    {
+      "area": "BASICAS",
+      "codigo": "CBM301",
+      "nombre": "Calculo Vectorial"
+    },
+    {
+      "area": "BASICAS",
+      "codigo": "CBM301",
+      "nombre": "Calculo Vectorial"
+    }
+  ]
+}

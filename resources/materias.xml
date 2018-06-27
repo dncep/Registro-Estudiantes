@@ -1,0 +1,17 @@
+<materias>
+    <materia>
+        <area>BASICAS</area>
+        <codigo>CMB301</codigo>
+        <nombre>Calculo Vectorial</nombre>
+    </materia>
+    <materia>
+        <area>BASICAS</area>
+        <codigo>CMB301</codigo>
+        <nombre>Calculo Vectorial</nombre>
+    </materia>
+    <materia>
+        <area>BASICAS</area>
+        <codigo>CMB301</codigo>
+        <nombre>Calculo Vectorial</nombre>
+    </materia>
+</materias>

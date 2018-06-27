@@ -12,4 +12,8 @@ public class Seccion {
     public Horario horario;
     public String codigo;
 
+    @Override
+    public String toString() {
+        return codigo + " - " + trimestre + " (ID: " + id + ")";
+    }
 }

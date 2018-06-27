@@ -1,5 +1,7 @@
 package prog2.estudiantes.data;
 
+import prog2.estudiantes.menu.AtrasExcepcion;
+import prog2.estudiantes.menu.Entrada;
 import prog2.estudiantes.saveio.SaveReader;
 import prog2.estudiantes.saveio.SaveWriter;
 
@@ -8,6 +10,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Objeto destinado a almacenar los datos del sistema, incluyendo los estudiantes y las materias.
@@ -203,6 +206,54 @@ public class Registro {
             }
         } catch(IOException x) {
             x.printStackTrace();
+        }
+    }
+
+    public Estudiante getEstudiante(String instruccion, Scanner scanner) {
+        if(estudiantes.isEmpty()) {
+            System.out.println("No hay estudiantes registrados");
+            throw new AtrasExcepcion();
+        }
+        while(true) {
+            int id = Entrada.getInt(instruccion, scanner);
+            for (Estudiante est : estudiantes) {
+                if (est.id == id) {
+                    return est;
+                }
+            }
+            System.out.print("No se encontró un estudiante con ese ID");
+        }
+    }
+
+    public Materia getMateria(String instruccion, Scanner scanner) {
+        if(materias.isEmpty()) {
+            System.out.println("No hay materias registradas");
+            throw new AtrasExcepcion();
+        }
+        while(true) {
+            String codigo = Entrada.getString(instruccion, scanner);
+            for(Materia mat : materias) {
+                if(mat.codigo.equals(codigo)) {
+                    return mat;
+                }
+            }
+            System.out.print("No se encontró una materia con ese código");
+        }
+    }
+
+    public Seccion getSeccion(String instruccion, Scanner scanner) {
+        if(secciones.isEmpty()) {
+            System.out.println("No hay secciones registradas");
+            throw new AtrasExcepcion();
+        }
+        while(true) {
+            int id = Entrada.getInt(instruccion, scanner);
+            for (Seccion sec : secciones) {
+                if (sec.id == id) {
+                    return sec;
+                }
+            }
+            System.out.print("No se encontró una sección con ese ID");
         }
     }
 }

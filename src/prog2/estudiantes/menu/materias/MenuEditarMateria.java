@@ -15,44 +15,37 @@ public class MenuEditarMateria implements Menu {
 
     @Override
     public boolean seleccionar(Registro registro, Scanner scanner) {
+        Materia mat = registro.getMateria("Introduzca el código de la materia", scanner);
 
-        String codigo = Entrada.getString("Introduzca el código", scanner);
+        System.out.println(mat.codigo + " - " + mat.nombre);
+        System.out.println("\tID: " + mat.id + " | Área: " + mat.area.getNombre());
 
-        for(Materia materia : registro.materias) {
-            if (materia.codigo.equals(codigo)) {
-                System.out.println(materia.codigo + " - " + materia.nombre);
-                System.out.println("\tID: " + materia.id + " | Área: " + materia.area.getNombre());
+        while(true) {
+            System.out.println("\nElige el numero del campo que quieres editar\n");
+            System.out.println("1. Código");
+            System.out.println("2. Nombre");
+            System.out.println("3. Área académica");
+            System.out.println("4. Salir");
+            int opcion = Entrada.getInt("\nIntroduzca el número de la opción", scanner, n -> n >= 1 && n <= 8);
 
-                while(true) {
-                    System.out.println("\nElige el numero del campo que quieres editar\n");
-                    System.out.println("1. Código");
-                    System.out.println("2. Nombre");
-                    System.out.println("3. Área académica");
-                    System.out.println("4. Salir");
-                    int opcion = Entrada.getInt("\nIntroduzca el número de la opción", scanner, n -> n >= 1 && n <= 8);
-
-                    switch(opcion) {
-                        case 1:
-                            materia.codigo = Entrada.getString("\nModificar el código", scanner);
-                            System.out.println("\nModificado correctamente!");
-                            break;
-                        case 2:
-                            materia.nombre = Entrada.getString("\nModificar el nombre", scanner);
-                            System.out.println("\nModificado correctamente!");
-                            break;
-                        case 3:
-                            materia.area = Entrada.getArea ("\nModificar el área académica", scanner);
-                            System.out.println("\nModificado correctamente!");
-                            break;
-                        default:
-                            System.out.println("\nNo ingresó una opción válida");
-                        case 4:
-                            return true;
-                    }
-                }
+            switch(opcion) {
+                case 1:
+                    mat.codigo = Entrada.getString("\nModificar el código", scanner);
+                    System.out.println("\nModificado correctamente!");
+                    break;
+                case 2:
+                    mat.nombre = Entrada.getString("\nModificar el nombre", scanner);
+                    System.out.println("\nModificado correctamente!");
+                    break;
+                case 3:
+                    mat.area = Entrada.getArea ("\nModificar el área académica", scanner);
+                    System.out.println("\nModificado correctamente!");
+                    break;
+                default:
+                    System.out.println("\nNo ingresó una opción válida");
+                case 4:
+                    return true;
             }
-
-        }  System.out.println("\nMateria no encontrada");
-        return true;
+        }
     }
 }

@@ -18,7 +18,7 @@ public class MenuBuscarSeccionMateria implements Menu {
     @Override
     public boolean seleccionar(Registro registro, Scanner scanner) {
         ArrayList<Seccion> secciones = registro.secciones;
-        String busca = Entrada.getString("Introduzca el codigo de la materia: ", scanner);
+        String busca = Entrada.getString("Introduzca el codigo de la materia", scanner);
         boolean encontrado = false;
         for(Seccion sec : secciones) {
             if (sec.materia.codigo.equalsIgnoreCase(busca)) {

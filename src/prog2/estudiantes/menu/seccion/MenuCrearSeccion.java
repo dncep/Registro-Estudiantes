@@ -19,7 +19,7 @@ public class MenuCrearSeccion implements Menu {
     public boolean seleccionar(Registro registro, Scanner scanner) {
 
         if(registro.materias.isEmpty()) {
-            System.out.println("No se puede crear una sección: no existen materias.");
+            System.out.println("No se puede crear una sección: no existen materias");
             return true;
         }
 
@@ -28,16 +28,7 @@ public class MenuCrearSeccion implements Menu {
 
         seccion.trimestre = Entrada.getTrimestre("Introduzca el trimestre", scanner);
 
-        while(seccion.materia == null) {
-            String codigo = Entrada.getString("Introduzca el código de la materia: ", scanner);
-            for(Materia materia : registro.materias) {
-                if(materia.codigo.equals(codigo)) {
-                    seccion.materia = materia;
-                    break;
-                }
-            }
-            if(seccion.materia == null) System.out.println("No se encontró una materia con ese código");
-        }
+        seccion.materia = registro.getMateria("Introduzca el código de la materia", scanner);
 
         seccion.profesor = Entrada.getString("Introduzca el nombre del profesor", scanner);
         seccion.aula = Entrada.getString("Introduzca el aula", scanner);
