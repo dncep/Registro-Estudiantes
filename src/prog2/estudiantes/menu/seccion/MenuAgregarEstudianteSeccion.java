@@ -39,7 +39,7 @@ public class MenuAgregarEstudianteSeccion implements Menu {
 
             int registradosArea = 0;
             for(Seccion otra : registro.secciones) {
-                if(otra.materia.area == sec.materia.area) {
+                if(otra.materia.area == sec.materia.area && otra.estudiantes.contains(est)) {
                     registradosArea++;
                     if(registradosArea >= 2) {
                         System.out.println("Un estudiante no puede estar registrado en más de 2 secciones de la misma área");

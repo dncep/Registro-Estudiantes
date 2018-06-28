@@ -122,7 +122,7 @@ public class Registro {
                     int cantEstudiantesEnSeccion = sr.readInt();
                     for(int j = 0; j < cantEstudiantesEnSeccion; j++) {
                         int id = sr.readInt();
-                        for(Estudiante est : sec.estudiantes) {
+                        for(Estudiante est : estudiantes) {
                             if(est.id == id) {
                                 sec.estudiantes.add(est);
                                 break;
@@ -221,7 +221,7 @@ public class Registro {
                     return est;
                 }
             }
-            System.out.print("No se encontró un estudiante con ese ID");
+            System.out.println("No se encontró un estudiante con ese ID");
         }
     }
 
@@ -237,7 +237,7 @@ public class Registro {
                     return mat;
                 }
             }
-            System.out.print("No se encontró una materia con ese código");
+            System.out.println("No se encontró una materia con ese código");
         }
     }
 
@@ -253,7 +253,7 @@ public class Registro {
                     return sec;
                 }
             }
-            System.out.print("No se encontró una sección con ese ID");
+            System.out.println("No se encontró una sección con ese ID");
         }
     }
 }
