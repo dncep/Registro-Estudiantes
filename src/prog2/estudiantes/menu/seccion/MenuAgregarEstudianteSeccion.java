@@ -21,8 +21,8 @@ public class MenuAgregarEstudianteSeccion implements Menu {
 
         while (true) {
             est = registro.getEstudiante("Introduzca el ID del estudiante", scanner);
-            if (est.estado != Estado.ACTIVO) {
-                System.out.println("Solo se pueden agregar estudiantes activos");
+            if (est.estado == Estado.INACTIVO) {
+                System.out.println("No se pueden agregar estudiantes inactivos");
             } else {
                 int registrados = 0;
                 for(Seccion sec : registro.secciones) {
