@@ -1,5 +1,6 @@
 package prog2.estudiantes.menu.integracion;
 
+import com.google.gson.JsonPrimitive;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -11,7 +12,12 @@ import prog2.estudiantes.data.*;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import java.awt.*;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.StringReader;
 import java.text.ParseException;
@@ -31,7 +37,52 @@ public class IntegracionXML implements ModuloIntegracion {
 
     @Override
     public void exportarEstudiantes() throws IOException {
+        File file = new File(System.getProperty("user.home") + File.separator + "estudiantes.xml");
 
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+
+        try {
+            DocumentBuilder builder = factory.newDocumentBuilder();
+
+            Document document = builder.newDocument();
+            document.setXmlVersion("1.0");
+
+            Element root = document.createElement("estudiantes");
+            document.appendChild(root);
+
+            for(Estudiante est : registro.estudiantes) {
+                Element estElem = document.createElement("estudiante");
+                writeTag(estElem, "nombre", est.nombre);
+                writeTag(estElem, "apellido", est.apellido);
+                writeTag(estElem, "id", est.id);
+                writeTag(estElem, "estado", est.estado.name());
+                writeTag(estElem, "carrera", est.carrera.name());
+                writeTag(estElem, "cedula", est.cedula);
+                SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+                writeTag(estElem, "fechaNacimiento", df.format(est.fechaNacimiento.getTime()));
+                writeTag(estElem, "extranjero", est.esExtranjero);
+                root.appendChild(estElem);
+            }
+
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+            DOMSource source = new DOMSource(document);
+            StreamResult result = new StreamResult(file);
+            transformer.transform(source, result);
+
+        } catch(ParserConfigurationException | TransformerException x) {
+            x.printStackTrace();
+        }
+
+        Desktop.getDesktop().open(file);
+    }
+
+    private void writeTag(Element element, String tagName, Object textContent) {
+        Element newElem = element.getOwnerDocument().createElement(tagName);
+        newElem.setTextContent(textContent.toString());
+        element.appendChild(newElem);
     }
 
     @Override

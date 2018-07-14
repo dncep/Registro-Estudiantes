@@ -3,8 +3,10 @@ package prog2.estudiantes.menu.integracion;
 import com.google.gson.*;
 import prog2.estudiantes.data.*;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -23,12 +25,50 @@ public class IntegracionJSON implements ModuloIntegracion {
 
     @Override
     public void exportarEstudiantes() throws IOException {
+        File file = new File(System.getProperty("user.home") + File.separator + "estudiantes.json");
 
+        GsonBuilder gb = new GsonBuilder();
+        gb.setPrettyPrinting();
+        Gson gson = gb.create();
+
+        JsonObject root = new JsonObject();
+
+        JsonArray arr = new JsonArray();
+
+        root.add("estudiantes", arr);
+
+        for(Estudiante est : registro.estudiantes) {
+            JsonObject elem = new JsonObject();
+            elem.add("nombre", new JsonPrimitive(est.nombre));
+            elem.add("apellido", new JsonPrimitive(est.apellido));
+            elem.add("id", new JsonPrimitive(est.id));
+            elem.add("estado", new JsonPrimitive(est.estado.name()));
+            elem.add("carrera", new JsonPrimitive(est.carrera.name()));
+            elem.add("cedula", new JsonPrimitive(est.cedula.toString()));
+            SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+            elem.add("fecha_nacimiento", new JsonPrimitive(df.format(est.fechaNacimiento.getTime())));
+            elem.add("extranjero", new JsonPrimitive(est.esExtranjero));
+            arr.add(elem);
+        }
+
+        try(FileWriter fw = new FileWriter(file)){
+            fw.write(gson.toJson(root));
+        }
+
+        Desktop.getDesktop().open(file);
     }
 
     @Override
     public void exportarMaterias() throws IOException {
+        File file = new File(System.getProperty("user.home") + File.separator + "materias.json");
 
+        /*
+        *
+        * ...
+        *
+        * */
+
+        Desktop.getDesktop().open(file);
     }
 
     @Override
