@@ -2,6 +2,9 @@ package prog2.estudiantes.data;
 
 import prog2.estudiantes.menu.AtrasExcepcion;
 import prog2.estudiantes.menu.Entrada;
+import prog2.estudiantes.menu.integracion.IntegracionJSON;
+import prog2.estudiantes.menu.integracion.IntegracionXML;
+import prog2.estudiantes.menu.integracion.ModuloIntegracion;
 import prog2.estudiantes.saveio.SaveReader;
 import prog2.estudiantes.saveio.SaveWriter;
 
@@ -35,6 +38,9 @@ public class Registro {
      * El fichero en el cual almacenar los datos persistentes.
      * */
     private final File file;
+
+    public final ModuloIntegracion integracionXML = new IntegracionXML(this);
+    public final ModuloIntegracion integracionJSON = new IntegracionJSON(this);
 
     /**
      * El ID del siguiente estudiante a crear.
