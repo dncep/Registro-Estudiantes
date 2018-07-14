@@ -6,6 +6,7 @@ import prog2.estudiantes.menu.MenuInicio;
 
 import javax.xml.stream.XMLOutputFactory;
 import java.io.File;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
