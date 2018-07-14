@@ -90,9 +90,10 @@ public class MenuReporteriaPDF implements Menu {
 
             doc.save(file);
 
+            System.out.println("PDF exportado correctamente");
             Desktop.getDesktop().open(file);
         } catch(IOException x) {
-            System.out.println("Ocurrió un error: " + x.getLocalizedMessage());
+            System.out.println("Ocurrió un error al exportar el reporte: " + x.getMessage());
         }
 
         return true;

@@ -1,17 +1,27 @@
 <materias>
     <materia>
-        <area>BASICAS</area>
-        <codigo>CMB301</codigo>
-        <nombre>Calculo Vectorial</nombre>
+        <area>INGENIERIAS</area>
+        <codigo>INS315</codigo>
+        <nombre>Programación III (OOP)</nombre>
+    </materia>
+    <materia>
+        <area>INGENIERIAS</area>
+        <codigo>INS215</codigo>
+        <nombre>Programación II</nombre>
+    </materia>
+    <materia>
+        <area>INGENIERIAS</area>
+        <codigo>INS115</codigo>
+        <nombre>Programación I</nombre>
     </materia>
     <materia>
         <area>BASICAS</area>
-        <codigo>CMB301</codigo>
-        <nombre>Calculo Vectorial</nombre>
+        <codigo>CBM101</codigo>
+        <nombre>Álgebra y Geometría Analítica</nombre>
     </materia>
     <materia>
-        <area>BASICAS</area>
-        <codigo>CMB301</codigo>
-        <nombre>Calculo Vectorial</nombre>
+        <area>HUMANIDADES</area>
+        <codigo>CSS101</codigo>
+        <nombre>Ser Humano y Sociedad</nombre>
     </materia>
 </materias>

@@ -1,19 +1,29 @@
 {
   "materias": [
     {
-      "area": "BASICAS",
-      "codigo": "CBM301",
-      "nombre": "Calculo Vectorial"
+      "area": "INGENIERIAS",
+      "codigo": "INS315",
+      "nombre": "Programación III (OOP)"
+    },
+    {
+      "area": "INGENIERIAS",
+      "codigo": "INS215",
+      "nombre": "Programación II"
+    },
+    {
+      "area": "INGENIERIAS",
+      "codigo": "INS115",
+      "nombre": "Programación I"
     },
     {
       "area": "BASICAS",
-      "codigo": "CBM301",
-      "nombre": "Calculo Vectorial"
+      "codigo": "CBM101",
+      "nombre": "Álgebra y Geometría Analítica"
     },
     {
-      "area": "BASICAS",
-      "codigo": "CBM301",
-      "nombre": "Calculo Vectorial"
+      "area": "HUMANIDADES",
+      "codigo": "CSS101",
+      "nombre": "Ser Humano y Sociedad"
     }
   ]
 }

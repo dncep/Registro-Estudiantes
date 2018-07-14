@@ -6,6 +6,7 @@ import prog2.estudiantes.menu.Menu;
 import prog2.estudiantes.menu.MenuEstandar;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -22,7 +23,11 @@ public class MenuImportarEstudiantes implements MenuEstandar {
 
             @Override
             public boolean seleccionar(Registro registro, Scanner scanner) {
-                registro.integracionXML.importarEstudiantes(new File(Entrada.getString("Introduzca la ruta al archivo", scanner)));
+                try {
+                    registro.integracionXML.importar(new File(Entrada.getString("Introduzca la ruta al archivo", scanner)));
+                } catch(IOException x) {
+                    x.printStackTrace();
+                }
                 return true;
             }
         });
@@ -34,7 +39,11 @@ public class MenuImportarEstudiantes implements MenuEstandar {
 
             @Override
             public boolean seleccionar(Registro registro, Scanner scanner) {
-                registro.integracionJSON.importarEstudiantes(new File(Entrada.getString("Introduzca la ruta al archivo", scanner)));
+                try {
+                    registro.integracionJSON.importar(new File(Entrada.getString("Introduzca la ruta al archivo", scanner)));
+                } catch(IOException x) {
+                    x.printStackTrace();
+                }
                 return true;
             }
         });

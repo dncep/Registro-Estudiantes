@@ -45,9 +45,10 @@ public class MenuReporteriaExcel implements Menu {
                 JxlsHelper.getInstance().processTemplate(is, os, context);
             }
 
+            System.out.println("Tabla Excel exportada correctamente");
             Desktop.getDesktop().open(file);
         } catch(IOException x) {
-            System.out.println("Ocurrió un error: " + x.getLocalizedMessage());
+            System.out.println("Ocurrió un error al exportar el reporte: " + x.getMessage());
         }
 
         return true;

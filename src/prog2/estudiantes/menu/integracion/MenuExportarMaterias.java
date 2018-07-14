@@ -4,6 +4,7 @@ import prog2.estudiantes.data.Registro;
 import prog2.estudiantes.menu.Menu;
 import prog2.estudiantes.menu.MenuEstandar;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -20,7 +21,11 @@ public class MenuExportarMaterias implements MenuEstandar {
 
             @Override
             public boolean seleccionar(Registro registro, Scanner scanner) {
-                registro.integracionXML.exportarMaterias();
+                try {
+                    registro.integracionXML.exportarMaterias();
+                } catch (IOException x) {
+                    x.printStackTrace();
+                }
                 return true;
             }
         });
@@ -32,7 +37,11 @@ public class MenuExportarMaterias implements MenuEstandar {
 
             @Override
             public boolean seleccionar(Registro registro, Scanner scanner) {
-                registro.integracionJSON.exportarMaterias();
+                try {
+                    registro.integracionJSON.exportarMaterias();
+                } catch(IOException x) {
+                    x.printStackTrace();
+                }
                 return true;
             }
         });

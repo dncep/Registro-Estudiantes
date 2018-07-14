@@ -1,20 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <estudiantes>
     <estudiante>
-        <nombre>Daniel</nombre>
-        <apellido>Cepeda</apellido>
-        <id>1074824</id>
-        <estado>ACTIVO</estado>
-        <carrera>IDS</carrera>
+        <nombre>John</nombre>
+        <apellido>Doe</apellido>
+        <id>959532</id>
+        <estado>A_PRUEBA_ACADEMICA</estado>
+        <carrera>ECO</carrera>
+        <cedula>121-0101010-1</cedula>
+        <fechaNacimiento>13-09-1996</fechaNacimiento>
         <extranjero>false</extranjero>
-        <fechaNacimiento>22-11-2001</fechaNacimiento>
     </estudiante>
     <estudiante>
-        <nombre>Daniel</nombre>
-        <apellido>Cepeda</apellido>
-        <id>1074824</id>
-        <estado>ACTIVO</estado>
-        <carrera>IDS</carrera>
-        <extranjero>false</extranjero>
-        <fechaNacimiento>22-11-2001</fechaNacimiento>
+        <nombre>Phil</nombre>
+        <apellido>Swift</apellido>
+        <id>1108549</id>
+        <estado>INACTIVO</estado>
+        <carrera>CII</carrera>
+        <cedula>101-0101012-1</cedula>
+        <fechaNacimiento>15-06-1992</fechaNacimiento>
+        <extranjero>true</extranjero>
     </estudiante>
 </estudiantes>

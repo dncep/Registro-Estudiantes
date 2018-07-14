@@ -1,24 +1,24 @@
 {
   "estudiantes": [
     {
-      "nombre": "Daniel",
-      "apellido": "Cepeda",
-      "id": 1074824,
-      "cedula": "101-0101010-1",
-      "estado": "ACTIVO",
-      "carrera": "IDS",
-      "extranjero": false,
-      "fecha_nacimiento": "22-11-2001"
+      "nombre": "John",
+      "apellido": "Doe",
+      "id": 959532,
+      "estado": "A_PRUEBA_ACADEMICA",
+      "carrera": "ECO",
+      "cedula": "121-0101010-1",
+      "fecha_nacimiento": "13-09-1996",
+      "extranjero": false
     },
     {
-      "nombre": "Daniel",
-      "apellido": "Cepeda",
-      "id": 1074824,
-      "cedula": "101-0101010-1",
-      "estado": "ACTIVO",
-      "carrera": "IDS",
-      "extranjero": false,
-      "fecha_nacimiento": "22-11-2001"
+      "nombre": "Phil",
+      "apellido": "Swift",
+      "id": 1108549,
+      "estado": "INACTIVO",
+      "carrera": "CII",
+      "cedula": "101-0101012-1",
+      "fecha_nacimiento": "15-06-1992",
+      "extranjero": true
     }
   ]
 }

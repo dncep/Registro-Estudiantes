@@ -1,14 +1,13 @@
 package prog2.estudiantes.menu.integracion;
 
 import java.io.File;
+import java.io.IOException;
 
 public interface ModuloIntegracion {
 
-    void exportarEstudiantes();
+    void exportarEstudiantes() throws IOException;
 
-    void exportarMaterias();
+    void exportarMaterias() throws IOException;
 
-    void importarEstudiantes(File file);
-
-    void importarMaterias(File file);
+    void importar(File file) throws IOException;
 }

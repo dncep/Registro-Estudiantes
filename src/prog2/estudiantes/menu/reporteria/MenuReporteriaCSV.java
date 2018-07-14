@@ -5,6 +5,7 @@ import prog2.estudiantes.data.Registro;
 import prog2.estudiantes.data.Seccion;
 import prog2.estudiantes.menu.Menu;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -50,6 +51,9 @@ public class MenuReporteriaCSV implements Menu {
                 pw.print('"');
                 pw.println();
             }
+
+            System.out.println("CSV exportado correctamente");
+            Desktop.getDesktop().open(file);
         } catch(IOException x) {
             System.out.println("Ocurrió un error al exportar el reporte: " + x.getMessage());
         }
