@@ -1,8 +1,8 @@
 package prog2.estudiantes.menu.materias;
 
 import prog2.estudiantes.menu.Menu;
-import prog2.estudiantes.menu.MenuSalir;
 import prog2.estudiantes.menu.MenuEstandar;
+import prog2.estudiantes.menu.MenuSalir;
 
 import java.util.Arrays;
 import java.util.List;

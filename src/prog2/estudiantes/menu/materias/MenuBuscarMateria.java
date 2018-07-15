@@ -1,13 +1,13 @@
 package prog2.estudiantes.menu.materias;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
 import prog2.estudiantes.data.Materia;
 import prog2.estudiantes.data.Registro;
 import prog2.estudiantes.data.Util;
 import prog2.estudiantes.menu.Entrada;
 import prog2.estudiantes.menu.Menu;
+
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class MenuBuscarMateria implements Menu {
     @Override

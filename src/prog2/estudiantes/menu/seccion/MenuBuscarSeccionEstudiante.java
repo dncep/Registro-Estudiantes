@@ -3,7 +3,6 @@ package prog2.estudiantes.menu.seccion;
 import prog2.estudiantes.data.Estudiante;
 import prog2.estudiantes.data.Registro;
 import prog2.estudiantes.data.Seccion;
-import prog2.estudiantes.menu.Entrada;
 import prog2.estudiantes.menu.Menu;
 
 import java.util.Scanner;

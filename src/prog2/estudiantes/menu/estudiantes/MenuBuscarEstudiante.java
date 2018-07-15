@@ -1,7 +1,7 @@
 package prog2.estudiantes.menu.estudiantes;
 
-import prog2.estudiantes.data.Estudiante;
 import prog2.estudiantes.data.Cedula;
+import prog2.estudiantes.data.Estudiante;
 import prog2.estudiantes.data.Registro;
 import prog2.estudiantes.menu.Entrada;
 import prog2.estudiantes.menu.Menu;

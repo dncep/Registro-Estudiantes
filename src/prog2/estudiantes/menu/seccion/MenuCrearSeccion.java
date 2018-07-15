@@ -1,7 +1,6 @@
 package prog2.estudiantes.menu.seccion;
 
 import prog2.estudiantes.data.Horario;
-import prog2.estudiantes.data.Materia;
 import prog2.estudiantes.data.Registro;
 import prog2.estudiantes.data.Seccion;
 import prog2.estudiantes.menu.Entrada;

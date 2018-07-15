@@ -13,7 +13,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
-import java.util.Scanner;
 
 public class IntegracionJSON implements ModuloIntegracion {
     private final Registro registro;

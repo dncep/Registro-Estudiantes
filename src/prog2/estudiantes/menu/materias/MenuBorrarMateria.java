@@ -2,10 +2,8 @@ package prog2.estudiantes.menu.materias;
 
 import prog2.estudiantes.data.Materia;
 import prog2.estudiantes.data.Registro;
-import prog2.estudiantes.menu.Entrada;
 import prog2.estudiantes.menu.Menu;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MenuBorrarMateria implements Menu {

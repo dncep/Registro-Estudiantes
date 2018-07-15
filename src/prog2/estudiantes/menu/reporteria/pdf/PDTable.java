@@ -5,8 +5,6 @@ import org.apache.pdfbox.pdmodel.PDPageContentStream;
 
 import java.awt.*;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class PDTable {
     private int rows;

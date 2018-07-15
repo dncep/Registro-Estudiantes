@@ -4,9 +4,7 @@ import prog2.estudiantes.data.Registro;
 import prog2.estudiantes.menu.MenuBucle;
 import prog2.estudiantes.menu.MenuInicio;
 
-import javax.xml.stream.XMLOutputFactory;
 import java.io.File;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -15,21 +13,21 @@ public class Main {
     * Pendiente:
     *
     * Reportería (Menu 4):
-    *   PDF
-    *   Excel
-    *   CSV
+    *   PDF (HECHO)
+    *   Excel (HECHO)
+    *   CSV (HECHO)
     *
     *   Menu:
-    *       1. Listado Estudiantes por Sección (PDF, Excel, CSV)
+    *       1. Listado Estudiantes por Sección (PDF, Excel, CSV) (HECHO)
     *
     * Integración:
     *   Menu:
     *       1. Estudiantes:
-    *           1. Importar (XML, JSON)
-    *           2. Exportar (XML, JSON)
+    *           1. Importar (XML, JSON) (HECHO)
+    *           2. Exportar (XML, JSON) (HECHO)
     *
     *       2. Materias:
-    *           1. Importar (XML, JSON)
+    *           1. Importar (XML, JSON) (HECHO)
     *           2. Exportar (XML, JSON)
     *
     * Reglas de negocio:

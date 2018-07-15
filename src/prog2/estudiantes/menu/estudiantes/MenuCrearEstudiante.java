@@ -5,9 +5,7 @@ import prog2.estudiantes.data.Registro;
 import prog2.estudiantes.menu.Entrada;
 import prog2.estudiantes.menu.Menu;
 
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Scanner;
 
 public class MenuCrearEstudiante implements Menu {

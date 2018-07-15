@@ -3,13 +3,9 @@ package prog2.estudiantes.menu.reporteria;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
-import org.apache.pdfbox.pdmodel.font.PDFont;
-import org.apache.pdfbox.pdmodel.font.PDType1Font;
-import org.apache.pdfbox.util.Matrix;
 import prog2.estudiantes.data.*;
 import prog2.estudiantes.menu.Menu;
 import prog2.estudiantes.menu.reporteria.pdf.PDTable;
-import prog2.estudiantes.menu.reporteria.pdf.PDTableContent;
 import prog2.estudiantes.menu.reporteria.pdf.PDTableText;
 
 import java.awt.*;
