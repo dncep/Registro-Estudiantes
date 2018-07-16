@@ -88,7 +88,37 @@ public class IntegracionXML implements ModuloIntegracion {
 
     @Override
     public void exportarMaterias() throws IOException {
+        File file = new File(System.getProperty("user.home") + File.separator + "materias.xml");
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
+        try {
+            DocumentBuilder builder = factory.newDocumentBuilder();
+
+            Document document = builder.newDocument();
+            document.setXmlVersion("1.0");
+            Element root = document.createElement("materias");
+            document.appendChild(root);
+
+            for(Materia materia : registro.materias) {
+                Element materiaElem = document.createElement("materia");
+                writeTag(materiaElem, "codigo", materia.codigo);
+                writeTag(materiaElem, "nombre", materia.nombre);
+                writeTag(materiaElem, "area", materia.area);
+                root.appendChild(materiaElem);
+            }
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
+            DOMSource source = new DOMSource(document);
+            StreamResult result = new StreamResult(file);
+            transformer.transform(source, result);
+
+        } catch(ParserConfigurationException | TransformerException x) {
+            x.printStackTrace();
+        }
+
+        Desktop.getDesktop().open(file);
     }
 
     public void importar(File file) throws IOException {

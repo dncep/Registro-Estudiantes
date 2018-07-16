@@ -9,37 +9,8 @@ import java.util.Scanner;
 
 public class Main {
 
-    /*
-    * Pendiente:
-    *
-    * Reportería (Menu 4):
-    *   PDF (HECHO)
-    *   Excel (HECHO)
-    *   CSV (HECHO)
-    *
-    *   Menu:
-    *       1. Listado Estudiantes por Sección (PDF, Excel, CSV) (HECHO)
-    *
-    * Integración:
-    *   Menu:
-    *       1. Estudiantes:
-    *           1. Importar (XML, JSON) (HECHO)
-    *           2. Exportar (XML, JSON) (HECHO)
-    *
-    *       2. Materias:
-    *           1. Importar (XML, JSON) (HECHO)
-    *           2. Exportar (XML, JSON)
-    *
-    * Reglas de negocio:
-    *   1. Solo estudiantes activos (HECHO)
-    *   2. No estudiantes duplicados en una sección (HECHO)
-    *   3. Un estudiante no puede estar registrado en más de 5 secciones (HECHO)
-    *   4. Un estudiante no puede registrarse en más de 2 secciones de la misma área (HECHO)
-    *   5. El ID del estudiante es unico, autogenerado con formato yymmddsec, (year, month, day, sequence) (180620001) (HECHO)
-    *
-    * */
-
     public static void main(String[] args) {
+        System.err.close();
         MenuBucle bucle = new MenuBucle(new MenuInicio());
         Registro registro = new Registro(new File(System.getProperty("user.home") + File.separator + "registro_estudiantes"));
         registro.cargar();

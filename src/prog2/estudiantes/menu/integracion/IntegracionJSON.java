@@ -61,11 +61,28 @@ public class IntegracionJSON implements ModuloIntegracion {
     public void exportarMaterias() throws IOException {
         File file = new File(System.getProperty("user.home") + File.separator + "materias.json");
 
-        /*
-        *
-        * ...
-        *
-        * */
+        GsonBuilder gb = new GsonBuilder();
+        gb.setPrettyPrinting();
+        Gson gson = gb.create();
+
+        JsonObject root = new JsonObject();
+
+        JsonArray arr = new JsonArray();
+
+        root.add("materias", arr);
+
+        for(Materia mat : registro.materias) {
+            JsonObject elem = new JsonObject();
+            elem.add("id", new JsonPrimitive(mat.id));
+            elem.add("codigo", new JsonPrimitive(mat.codigo));
+            elem.add("nombre", new JsonPrimitive(mat.nombre));
+            elem.add("area", new JsonPrimitive(mat.area.name()));
+            arr.add(elem);
+        }
+
+        try(FileWriter fw = new FileWriter(file)){
+            fw.write(gson.toJson(root));
+        }
 
         Desktop.getDesktop().open(file);
     }
